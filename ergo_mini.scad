@@ -1,15 +1,15 @@
-include <../robotis-scad/ollo/ollo_def.scad>
-include <../robotis-scad/dynamixel/xl320_def.scad>
+include <robotis-scad/ollo/ollo_def.scad>
+include <robotis-scad/dynamixel/xl320_def.scad>
 include <ergo_mini_def.scad>
 
-use <../robotis-scad/dynamixel/xl320.scad>;
-use <../robotis-scad/frames/U_frame.scad>;
-use <../robotis-scad/frames/side_to_side_frame.scad>;
-use <../robotis-scad/frames/three_ollo_to_horn_frame.scad>;
-use <../robotis-scad/frames/U_three_ollo_to_horn_frame.scad>;
-use <../robotis-scad/frames/base_frame.scad>;
+use <robotis-scad/dynamixel/xl320.scad>;
+use <robotis-scad/frames/U_frame.scad>;
+use <robotis-scad/frames/side_to_side_frame.scad>;
+use <robotis-scad/frames/three_ollo_to_horn_frame.scad>;
+use <robotis-scad/frames/U_three_ollo_to_horn_frame.scad>;
+use <robotis-scad/frames/base_frame.scad>;
 
-use <../MCAD/rotate.scad>;
+use <MCAD/rotate.scad>;
 
 circular_base_frame(BaseRadius, BaseHeight);
 xl320();
