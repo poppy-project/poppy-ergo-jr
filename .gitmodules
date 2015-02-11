@@ -1,0 +1,9 @@
+[submodule "MCAD"]
+	path = MCAD
+	url = git@github.com:jgrizou/MCAD.git
+[submodule "segment-scad"]
+	path = segment-scad
+	url = git@github.com:jgrizou/segment-scad.git
+[submodule "robotis-scad"]
+	path = robotis-scad
+	url = git@github.com:jgrizou/robotis-scad.git
