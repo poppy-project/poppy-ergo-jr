@@ -1,0 +1,87 @@
+{
+  "controllers": {
+    "my_dxl_controller": {
+      "sync_read": true,
+      "protocol": 2,
+      "attached_motors": [
+        "base",
+        "head"
+      ],
+      "port": "auto"
+    }
+  },
+  "motorgroups": {
+    "base": [
+      "nadal",
+      "federer",
+      "monfils"
+    ],
+    "head": [
+      "chang",
+      "noah",
+      "agassi"
+    ]
+  },
+  "motors": {
+    "nadal": {
+      "offset": -45.0,
+      "type": "XL-320",
+      "id": 3,
+      "angle_limit": [
+        -135.0,
+        45.0
+      ],
+      "orientation": "direct"
+    },
+    "federer": {
+      "offset": 0.0,
+      "type": "XL-320",
+      "id": 5,
+      "angle_limit": [
+        -90.0,
+        90.0
+      ],
+      "orientation": "indirect"
+    },
+    "monfils": {
+      "offset": 0.0,
+      "type": "XL-320",
+      "id": 7,
+      "angle_limit": [
+        -90.0,
+        90.0
+      ],
+      "orientation": "indirect"
+    },
+    "chang": {
+      "offset": -45.0,
+      "type": "XL-320",
+      "id": 11,
+      "angle_limit": [
+        -135.0,
+        45.0
+      ],
+      "orientation": "direct"
+    },
+    "noah": {
+      "offset": 0.0,
+      "type": "XL-320",
+      "id": 13,
+      "angle_limit": [
+        -90.0,
+        90.0
+      ],
+      "orientation": "indirect"
+    },
+    "agassi": {
+      "offset": 0.0,
+      "type": "XL-320",
+      "id": 17,
+      "angle_limit": [
+        -90.0,
+        90.0
+      ],
+      "orientation": "indirect"
+    }
+  }
+}
