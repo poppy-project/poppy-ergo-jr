@@ -16,7 +16,7 @@ xl320();
 translate_to_xl320_top()
   rotate([0,0,90])
     verticalize_U_frame(height=A){
-      add_bottom_crossOlloHoles_to_U_frame(height=A, angle=45)
+      add_bottom_crossOlloHoles_to_U_frame(height=A)
         U_frame(height=A);
       xl320_two_horns();
       translate_to_box_back()
