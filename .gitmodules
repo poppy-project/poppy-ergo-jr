@@ -1,9 +1,9 @@
-[submodule "MCAD"]
-	path = MCAD
-	url = git@github.com:jgrizou/MCAD.git
-[submodule "segment-scad"]
-	path = segment-scad
-	url = git@github.com:jgrizou/segment-scad.git
-[submodule "robotis-scad"]
-	path = robotis-scad
-	url = git@github.com:jgrizou/robotis-scad.git
+[submodule "hardware/MCAD"]
+	path = hardware/MCAD
+	url = https://github.com/jgrizou/MCAD.git
+[submodule "hardware/segment-scad"]
+	path = hardware/segment-scad
+	url = https://github.com/jgrizou/segment-scad.git
+[submodule "hardware/robotis-scad"]
+	path = hardware/robotis-scad
+	url = https://github.com/jgrizou/robotis-scad.git
