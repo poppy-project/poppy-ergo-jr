@@ -1,5 +1,5 @@
 from poppy.creatures import AbstractPoppyCreature
 
 
-class PoppyErgoMini(AbstractPoppyCreature):
+class PoppyErgoJr(AbstractPoppyCreature):
     pass

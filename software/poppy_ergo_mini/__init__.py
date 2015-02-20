@@ -1,1 +1,0 @@
-from poppy_ergo_mini import PoppyErgoMini
