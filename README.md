@@ -1,3 +1,5 @@
 # PoppyErgoJr (WORK IN PROGRESS!)
 
-![PoppyErgoJr](doc/img/poppy-ergo-jr.jpg)
+[Watch PoppyErgoJr in action!](https://vine.co/v/OxlTF6inWpV)
+
+[![PoppyErgoJr](doc/img/poppy-ergo-jr.jpg)](https://vine.co/v/OxlTF6inWpV)
