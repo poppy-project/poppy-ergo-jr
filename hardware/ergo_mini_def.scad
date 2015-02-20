@@ -9,4 +9,4 @@ B = 30;
 C = OlloSpacing+FrameTolerance;
 D = 30;
 E = 30;
-F = 25;
+F = OlloSpacing+FrameTolerance;
