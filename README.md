@@ -1,3 +1,3 @@
-# Poppy Ergo Mini (WORK IN PROGRESS!)
+# PoppyErgoJr (WORK IN PROGRESS!)
 
-![Poppy Ergo Mini](doc/img/poppy-ergo-mini.jpg)
+![PoppyErgoJr](doc/img/poppy-ergo-jr.jpg)
