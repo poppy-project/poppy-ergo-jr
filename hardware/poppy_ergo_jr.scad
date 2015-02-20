@@ -1,6 +1,6 @@
 include <robotis-scad/ollo/ollo_def.scad>
 include <robotis-scad/dynamixel/xl320_def.scad>
-include <ergo_mini_def.scad>
+include <poppy_ergo_jr_def.scad>
 
 use <robotis-scad/dynamixel/xl320.scad>;
 use <robotis-scad/frames/base_frame.scad>;

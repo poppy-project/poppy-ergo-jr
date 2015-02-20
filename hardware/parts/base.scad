@@ -1,4 +1,4 @@
-include <../ergo_mini_def.scad>
+include <../poppy_ergo_jr_def.scad>
 
 use <../robotis-scad/frames/base_frame.scad>;
 
