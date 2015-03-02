@@ -4,16 +4,16 @@ The next milestones for this project
 
 ## OpenScad side
 
-* [ ] Investigate is using MCAD library is worth it:
+* [x] Investigate is using MCAD library is worth it:
   - http://reprap.org/wiki/MCAD
   - https://github.com/SolidCode/MCAD
 * [x] Tools to create parametric flat shapes
 * [x] Segment tools
-* [ ] Smart function and module to create frame, example U frame combines different segment types in a U shape ...
-* [ ] Should print on high-end and low-cost printer
+* [x] Smart function and module to create frame, example U frame combines different segment types in a U shape ...
+* [x] Should print on high-end and low-cost printer
 * [ ] Automatic BOM (see PySolid: https://pypi.python.org/pypi/solidpython/0.1.1)
 
-## Poppy Ergo Mini
+## Poppy Ergo Jr
 
 * [x] Have a first version quickly, even if ugly code (by January 5)
 * [ ] Use a descriptive language to build "any" robot shape:
@@ -23,7 +23,9 @@ The next milestones for this project
   - Denavit-Hartenberg:
     - http://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters
     - https://github.com/cdsousa/sympybotics
-* [ ]  Add a gripper
+* [ ] Create a gripper
+* [ ] Create a pen holder
+* [ ] Create a base for thymio
 
 ## Lego compatibility
 
@@ -33,9 +35,7 @@ The next milestones for this project
   - https://github.com/radavis/openscad/blob/master/lego.scad
   - http://code.metager.de/source/xref/openscad/MCAD/lego_compatibility.scad
 
-* [ ] Easy plugin on parametric flat shape
-* [ ]  Every important parts should have a Lego version
-
+* [ ] Easy compatibility with parametric frame
 
 ## Webtools
 
