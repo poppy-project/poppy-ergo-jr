@@ -5,25 +5,25 @@
       "protocol": 2,
       "attached_motors": [
         "base",
-        "head"
+        "tip"
       ],
       "port": "auto"
     }
   },
   "motorgroups": {
     "base": [
-      "nadal",
-      "federer",
-      "monfils"
+      "m1",
+      "m2",
+      "m3"
     ],
-    "head": [
-      "chang",
-      "noah",
-      "agassi"
+    "tip": [
+      "m4",
+      "m5",
+      "m6"
     ]
   },
   "motors": {
-    "nadal": {
+    "m1": {
       "offset": -45.0,
       "type": "XL-320",
       "id": 3,
@@ -33,7 +33,7 @@
       ],
       "orientation": "direct"
     },
-    "federer": {
+    "m2": {
       "offset": 0.0,
       "type": "XL-320",
       "id": 5,
@@ -43,7 +43,7 @@
       ],
       "orientation": "indirect"
     },
-    "monfils": {
+    "m3": {
       "offset": 0.0,
       "type": "XL-320",
       "id": 7,
@@ -53,7 +53,7 @@
       ],
       "orientation": "indirect"
     },
-    "chang": {
+    "m4": {
       "offset": -45.0,
       "type": "XL-320",
       "id": 11,
@@ -63,7 +63,7 @@
       ],
       "orientation": "direct"
     },
-    "noah": {
+    "m5": {
       "offset": 0.0,
       "type": "XL-320",
       "id": 13,
@@ -73,7 +73,7 @@
       ],
       "orientation": "indirect"
     },
-    "agassi": {
+    "m6": {
       "offset": 0.0,
       "type": "XL-320",
       "id": 17,
