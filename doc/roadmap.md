@@ -26,6 +26,8 @@ The next milestones for this project
 * [ ] Create a gripper
 * [ ] Create a pen holder
 * [ ] Create a base for thymio
+* [ ] Raspberry Pi 2B base:
+- http://www.thingiverse.com/thing:429317
 
 ## Lego compatibility
 
