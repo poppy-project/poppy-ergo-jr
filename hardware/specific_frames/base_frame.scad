@@ -14,8 +14,6 @@ use <../robotis-scad/ollo_segments/ollo_xl320_segment.scad>;
 use <../MCAD/rotate.scad>;
 
 module side_branch(height, nLayer, width) {
-  // length is the lenght between the motors
-  // nSupport is the number of elements joining both side
   thickness = ollo_segment_thickness(nLayer);
 
   rotate([0,0,90])
