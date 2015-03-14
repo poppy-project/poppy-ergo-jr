@@ -3,3 +3,4 @@ parts/stl
 hardware/parts/stl
 hardware/parts/raw/stl
 hardware/parts/smart/stl
+hardware/poppy_4dof_arm_mini/parts/smart/stl

@@ -16,6 +16,9 @@ scadArg="\$fn=$fn"
 mkdir -p stl;
 
 # should be automated
+echo "Generating base..."
+openscad -o stl/base.stl base.scad -D $scadArg
+
 echo "Generating shift_one_side..."
 openscad -o stl/shift_one_side.stl shift_one_side.scad -D $scadArg
 
