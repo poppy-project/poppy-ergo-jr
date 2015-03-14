@@ -14,27 +14,40 @@ use <../robotis-scad/frames/horn_to_horn_frame.scad>;
 
 use <../MCAD/rotate.scad>;
 
-circular_base_frame(BaseRadius, BaseHeight);
-xl320();
-translate_to_xl320_top()
-  verticalize_U_horn_to_horn_frame(A){
-    U_horn_to_horn_frame(A);
-    xl320_two_horns();
-    translate_to_box_back()
-      translate([0,OlloSpacing/2,0])
-        rotate([180,90,0])
-          add_three_ollo_frame(B)
-            rotate([0,-90,0])
-              translate([0,MotorLength-MotorAxisOffset-ollo_nLayer_thickness(1),0]){
-                xl320_two_horns();
-                rotate([0,-90,90])
-                  add_horn_to_horn_frame(C)
-                    rotate([180,-90,0]){
-                      xl320_two_horns();
-                      translate_to_box_back()
-                        translate([0,OlloLayerThickness,0])
-                        rotate([0,90,180])
-                          pen_holder_frame();
-                    }
-              }
-  }
+
+module poppy_4dof_arm_mini() {
+  circular_base_frame(BaseRadius, BaseHeight);
+  xl320();
+  translate_to_xl320_top()
+    verticalize_U_horn_to_horn_frame(AA){
+      U_horn_to_horn_frame(AA);
+      xl320_two_horns();
+      translate_to_box_back()
+        translate([0,OlloSpacing/2,0])
+          rotate([180,90,0])
+            add_three_ollo_frame(BB)
+              rotate([0,-90,0])
+                translate([0,MotorLength-MotorAxisOffset-ollo_nLayer_thickness(1),0]){
+                  xl320_two_horns();
+                  rotate([0,-90,90])
+                    add_horn_to_horn_frame(CC)
+                      rotate([180,-90,0]){
+                        xl320_two_horns();
+                        translate_to_box_back()
+                          translate([0,OlloLayerThickness,0])
+                            rotate([0,90,180])
+                              pen_holder_frame(DD);
+                      }
+                }
+    }
+}
+// Testing
+echo("##########");
+echo("In poppy_4dof_arm_mini.scad");
+echo("This file should not be included, use ''use <filemane>'' instead.");
+echo("##########");
+
+p = 1;
+if (p==1) {
+  poppy_4dof_arm_mini();
+}

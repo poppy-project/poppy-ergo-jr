@@ -5,6 +5,7 @@ include <../specific_frames/specific_frame_def.scad>
 BaseRadius = CircularBaseFrameRadius;
 BaseHeight = CircularBaseFrameHeight+FrameTolerance;
 
-A = 25;
-B = 60;
-C = 80;
+AA = 25;
+BB = 51;
+CC = 102;
+DD = OlloSpacing+FrameTolerance;
