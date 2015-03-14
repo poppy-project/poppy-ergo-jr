@@ -16,14 +16,14 @@ scadArg="\$fn=$fn"
 mkdir -p stl;
 
 # should be automated
-echo "Generating shift_one_side..."
-openscad -o stl/shift_one_side.stl shift_one_side.scad -D $scadArg
-
 echo "Generating U_horn_to_horn..."
 openscad -o stl/U_horn_to_horn.stl U_horn_to_horn.scad -D $scadArg
 
-echo "Generating U_side_to_horn..."
-openscad -o stl/U_side_to_horn.stl U_side_to_horn.scad -D $scadArg
+echo "Generating horn_to_horn..."
+openscad -o stl/horn_to_horn.stl horn_to_horn.scad -D $scadArg
+
+echo "Generating three_ollo..."
+openscad -o stl/three_ollo.stl three_ollo.scad -D $scadArg
 
 echo "Generating pen_holder..."
 openscad -o stl/pen_holder.stl pen_holder.scad -D $scadArg
