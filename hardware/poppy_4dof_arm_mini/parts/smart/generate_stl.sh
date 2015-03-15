@@ -19,6 +19,9 @@ mkdir -p stl;
 echo "Generating base..."
 openscad -o stl/base.stl base.scad -D $scadArg
 
+echo "Generating side_to_side..."
+openscad -o stl/side_to_side.stl side_to_side.scad -D $scadArg
+
 echo "Generating U_horn_to_horn..."
 openscad -o stl/U_horn_to_horn.stl U_horn_to_horn.scad -D $scadArg
 

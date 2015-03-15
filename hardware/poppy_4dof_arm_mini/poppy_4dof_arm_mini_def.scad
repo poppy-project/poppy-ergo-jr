@@ -7,5 +7,6 @@ BaseHeight = CircularBaseFrameHeight+FrameTolerance;
 
 AA = 25;
 BB = 51;
+BB2 = 81;
 CC = 102;
 DD = OlloSpacing+FrameTolerance;
