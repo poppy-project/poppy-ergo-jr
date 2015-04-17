@@ -4,6 +4,8 @@
 
 [![PoppyErgoJr](doc/img/poppy-ergo-jr.jpg)](https://vine.co/v/OxlTF6inWpV)
 
+## [BOM »](hardware/parts/BOM.md)
+
 ## [RoadMap »](doc/roadmap.md)
 
 ## [Suppliers »](doc/suppliers.md)
