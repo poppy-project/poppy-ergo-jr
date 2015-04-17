@@ -7,6 +7,3 @@
 [submodule "hardware/robotis-scad"]
 	path = hardware/robotis-scad
 	url = https://github.com/jgrizou/robotis-scad.git
-[submodule "hardware/lego-scad"]
-	path = hardware/lego-scad
-	url = https://github.com/jgrizou/lego-scad.git
