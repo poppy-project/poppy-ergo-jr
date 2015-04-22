@@ -13,7 +13,7 @@ For building a Poppy Ergo Jr, you will need:
 
 
 * the [3D printed parts](../hardware/parts/BOM.md)
-* many [OLLO rivets](http://www.generationrobots.com/en/401870-ollo-rivet-set-ors-10.html?search_query=OLLO&results=11#accessoires) (between 4 and 12 per motor)
+* many [OLLO rivets](http://www.generationrobots.com/en/401870-ollo-rivet-set-ors-10.html) (between 4 and 12 per motor)
 * 4x [OLLO Pulley-L](http://www.generationrobots.com/en/401871-ollo-pulley-l-gray-5pcs.html?search_query=OLLO&results=23) and their rivets
 * 1x [OLLO Tool](http://www.generationrobots.com/en/401872-ollo-tool.html)
 
