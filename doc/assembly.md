@@ -66,7 +66,7 @@ Mount another motor on top.
 
 ![Another Step](img/assembly/step-4-1.jpg)
 
-The OLLO Pulley is inside and you should assemble it with the bigger rivet.
+The OLLO Pulley is inside and you should assemble it with the bigger rivet. Bonus, you can watch this step in [slow motion](https://vimeo.com/125704291).
 
 ![Another Step](img/assembly/step-4-2.jpg)
 
