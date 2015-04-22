@@ -8,7 +8,7 @@ For building a Poppy Ergo Jr, you will need:
 * 1x [USB2Dynamixel](http://www.generationrobots.com/en/400848-usb2dynamixel-robotis.html?search_query=usb2dynamixel&results=20)
 * 1x [TTL cable](http://www.generationrobots.com/en/401739-3p-cable-set-bcs-3p01-for-dynamixel-servo-motors.html?search_query=mx+cable&results=336)
 
-* 1 external power supply able to output 7.5V at least 2A for the motors (see [here](https://forum.poppy-project.org/t/birth-of-poppyergojr-and-support-for-low-cost-xl-320-motors/1052/9) for details)
+* 1 external power supply able to output 7.5V at least 2A for the motors (see [here](https://forum.poppy-project.org/t/birth-of-poppyergojr-and-support-for-low-cost-xl-320-motors/1052/10) for details)
 * 1x small electronic board (see the [electronic section](electronic.md))
 
 
