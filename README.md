@@ -4,7 +4,9 @@
 
 [![PoppyErgoJr](doc/img/poppy-ergo-jr.jpg)](https://vine.co/v/OxlTF6inWpV)
 
-## [BOM »](hardware/parts/BOM.md)
+## [Build your robot »](doc/assembly.md)
+
+## [Electronic tips »](doc/electronic.md)
 
 ## [RoadMap »](doc/roadmap.md)
 
