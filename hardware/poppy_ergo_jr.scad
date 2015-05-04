@@ -15,7 +15,6 @@ use <robotis-scad/frames/U_three_ollo_to_horn_frame.scad>;
 use <MCAD/rotate.scad>;
 
 module poppy_ergo_jr(){
-  circular_base_frame(BaseRadius, BaseHeight);
   xl320();
   translate_to_xl320_top()
     verticalize_U_horn_to_horn_frame(A){
@@ -64,5 +63,6 @@ echo("##########");
 
 p = 1;
 if (p==1) {
+  circular_base_frame(BaseRadius, BaseHeight);
   poppy_ergo_jr();
 }
