@@ -55,6 +55,15 @@ module raspberry_pi_Bplus_base_frame(boardHeight=5, holeType="spike", cornerRadi
 
 }
 
+module raspberry_pi_Bplus_base_frame_with_raspberry_board(boardHeight=5, holeType="spike", cornerRadius=RaspberryPiBplusFrameCornerRadius, nLayer=1) {
+
+  raspberry_pi_Bplus_base_frame();
+
+  translate([0,0,ollo_segment_thickness(nLayer)+boardHeight])
+    add_raspberry_pi_Bplus();
+
+}
+
 // Testing
 echo("##########");
 echo("In raspberry_pi_Bplus_base_frame.scad");
@@ -65,8 +74,5 @@ use <../robotis-scad/dynamixel/xl320.scad>
 
 p = 1;
 if (p==1) {
-  raspberry_pi_Bplus_base_frame();
-
-  translate([0,0,ollo_segment_thickness(1)+5])
-    add_raspberry_pi_Bplus();
+  raspberry_pi_Bplus_base_frame_with_raspberry_board();
 }

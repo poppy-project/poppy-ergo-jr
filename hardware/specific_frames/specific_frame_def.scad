@@ -12,7 +12,7 @@ PenHolderInnerDiameter = 12;
 RaspberryPiBplusFrameWidth = RaspberryPiBplusLength;
 
 RaspberryPiBplusFrameDistanceBoardToMotor = 10;
-RaspberryPiBplusFrameDistanceMotorToEnd = 10;
+RaspberryPiBplusFrameDistanceMotorToEnd = 20;
 RaspberryPiBplusFrameEndWidth = MotorWidth + 10;
 
 RaspberryPiBplusFrameLenght = RaspberryPiBplusWidth + RaspberryPiBplusFrameDistanceBoardToMotor + MotorLength + RaspberryPiBplusFrameDistanceMotorToEnd;

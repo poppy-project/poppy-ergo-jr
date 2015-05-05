@@ -30,3 +30,6 @@ openscad -o stl/U_side_to_horn.stl U_side_to_horn.scad -D $scadArg
 
 echo "Generating pen_holder..."
 openscad -o stl/pen_holder.stl pen_holder.scad -D $scadArg
+
+echo "Generating raspberry_base..."
+openscad -o stl/raspberry_base.stl raspberry_base.scad -D $scadArg

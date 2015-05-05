@@ -1,18 +1,21 @@
 include <robotis-scad/ollo/ollo_def.scad>
 include <robotis-scad/dynamixel/xl320_def.scad>
+include <specific_frames/specific_frame_def.scad>
 include <poppy_ergo_jr_def.scad>
 
-use <robotis-scad/dynamixel/xl320.scad>;
+use <robotis-scad/dynamixel/xl320.scad>
 
-use <specific_frames/base_frame.scad>;
-use <specific_frames/pen_holder_frame.scad>;
+use <specific_frames/base_frame.scad>
+use <specific_frames/pen_holder_frame.scad>
+use <specific_frames/raspberry_pi_Bplus_base_frame.scad>
 
-use <robotis-scad/frames/side_to_side_frame.scad>;
-use <robotis-scad/frames/three_ollo_to_horn_frame.scad>;
-use <robotis-scad/frames/U_horn_to_horn_frame.scad>;
-use <robotis-scad/frames/U_three_ollo_to_horn_frame.scad>;
 
-use <MCAD/rotate.scad>;
+use <robotis-scad/frames/side_to_side_frame.scad>
+use <robotis-scad/frames/three_ollo_to_horn_frame.scad>
+use <robotis-scad/frames/U_horn_to_horn_frame.scad>
+use <robotis-scad/frames/U_three_ollo_to_horn_frame.scad>
+
+use <MCAD/rotate.scad>
 
 module poppy_ergo_jr(){
   xl320();
@@ -65,4 +68,13 @@ p = 1;
 if (p==1) {
   circular_base_frame(BaseRadius, BaseHeight);
   poppy_ergo_jr();
+
+  translate([100,0,0]) {
+    translate([0, - RaspberryPiBplusWidth/2 - RaspberryPiBplusFrameDistanceBoardToMotor - MotorLength + MotorAxisOffset, -MotorHeight/2-ollo_segment_thickness(1)])
+      raspberry_pi_Bplus_base_frame_with_raspberry_board();
+
+    poppy_ergo_jr();
+  }
+
+
 }
