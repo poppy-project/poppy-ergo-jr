@@ -7,3 +7,6 @@
 [submodule "hardware/robotis-scad"]
 	path = hardware/robotis-scad
 	url = https://github.com/jgrizou/robotis-scad.git
+[submodule "hardware/raspberry-scad"]
+	path = hardware/raspberry-scad
+	url = https://github.com/jgrizou/raspberry-scad.git
