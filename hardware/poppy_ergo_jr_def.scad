@@ -7,7 +7,7 @@ BaseHeight = CircularBaseFrameHeight+FrameTolerance;
 
 A = 25;
 B = 30;
-C = OlloSpacing+FrameTolerance;
+C = OlloSpacing/2+ollo_segment_thickness(1);
 D = 30;
 E = 30;
-F = OlloSpacing+FrameTolerance;
+F = OlloSpacing/2+2*ollo_segment_thickness(1);

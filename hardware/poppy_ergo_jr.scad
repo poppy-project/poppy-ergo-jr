@@ -7,6 +7,8 @@ use <robotis-scad/dynamixel/xl320.scad>
 
 use <specific_frames/base_frame.scad>
 use <specific_frames/pen_holder_frame.scad>
+use <specific_frames/cylinder_head_frame.scad>
+use <specific_frames/lamp_head_frame.scad>
 use <specific_frames/raspberry_pi_Bplus_base_frame.scad>
 
 
@@ -17,8 +19,13 @@ use <robotis-scad/frames/U_three_ollo_to_horn_frame.scad>
 
 use <MCAD/rotate.scad>
 
-module poppy_ergo_jr(){
-  xl320();
+module poppy_ergo_jr(direction="front", endTool="pen_holder"){
+  if (direction == "front")
+    xl320();
+  if (direction == "back")
+    rotate([0,0,180])
+      xl320();
+
   translate_to_xl320_top()
     verticalize_U_horn_to_horn_frame(A){
       U_horn_to_horn_frame(A);
@@ -50,12 +57,21 @@ module poppy_ergo_jr(){
                                                 translate_to_box_back()
                                                   translate([0,OlloSpacing/2,0])
                                                     rotate([180,90,0])
-                                                      pen_holder_frame(length=F);
+                                                      add_end_tool(endTool);
                                               }
                                     }
                             }
               }
     }
+}
+
+module add_end_tool(endTool) {
+  if (endTool=="pen_holder")
+    pen_holder_frame(length=F);
+  if (endTool=="cylinder_head")
+    cylinder_head_frame(length=F);
+  if (endTool=="lamp_head")
+    lamp_head_frame(length=F);
 }
 
 // Testing
@@ -67,14 +83,17 @@ echo("##########");
 p = 1;
 if (p==1) {
   circular_base_frame(BaseRadius, BaseHeight);
-  poppy_ergo_jr();
+  poppy_ergo_jr(endTool="cylinder_head");
 
   translate([100,0,0]) {
     translate([0, - RaspberryPiBplusWidth/2 - RaspberryPiBplusFrameDistanceBoardToMotor - MotorLength + MotorAxisOffset, -MotorHeight/2-ollo_segment_thickness(1)])
       raspberry_pi_Bplus_base_frame_with_raspberry_board();
 
-    poppy_ergo_jr();
+    poppy_ergo_jr(endTool="pen_holder");
   }
 
+  translate([200,0,0]) {
+    poppy_ergo_jr(endTool="lamp_head");
+  }
 
 }
