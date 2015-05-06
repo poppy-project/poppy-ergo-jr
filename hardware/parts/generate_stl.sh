@@ -28,8 +28,29 @@ openscad -o stl/U_horn_to_horn.stl U_horn_to_horn.scad -D $scadArg
 echo "Generating U_side_to_horn..."
 openscad -o stl/U_side_to_horn.stl U_side_to_horn.scad -D $scadArg
 
+echo "Generating raspberry_base..."
+openscad -o stl/raspberry_base.stl raspberry_base.scad -D $scadArg
+
+echo "Generating circular_raspberry_base..."
+openscad -o stl/circular_raspberry_base.stl circular_raspberry_base.scad -D $scadArg
+
+echo "Generating raspberry_base_with_wheels..."
+openscad -o stl/raspberry_base_with_wheels.stl raspberry_base_with_wheels.scad -D $scadArg
+
+echo "Generating ollo_to_lego_for_wheels..."
+openscad -o stl/ollo_to_lego_for_wheels.stl ollo_to_lego_for_wheels.scad -D $scadArg
+
+echo "Generating passive_wheel..."
+openscad -o stl/passive_wheel.stl passive_wheel.scad -D $scadArg
+
 echo "Generating pen_holder..."
 openscad -o stl/pen_holder.stl pen_holder.scad -D $scadArg
 
-echo "Generating raspberry_base..."
-openscad -o stl/raspberry_base.stl raspberry_base.scad -D $scadArg
+echo "Generating cylinder_head..."
+openscad -o stl/cylinder_head.stl cylinder_head.scad -D $scadArg
+
+echo "Generating lamp_head..."
+openscad -o stl/lamp_head.stl lamp_head.scad -D $scadArg
+
+echo "Generating simple_U..."
+openscad -o stl/simple_U.stl simple_U.scad -D $scadArg
