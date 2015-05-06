@@ -13,35 +13,35 @@ use <../robotis-scad/ollo_segments/ollo_xl320_segment.scad>;
 
 use <../MCAD/rotate.scad>;
 
-module side_branch(height, nLayer, width) {
+module side_branch(height, nLayer, width, withHole=false) {
   thickness = ollo_segment_thickness(nLayer);
 
   rotate([0,0,90])
     translate([0,-1.5*OlloSpacing,0])
-      ollo_xl320_side_start_segment(nLayer, width);
+      ollo_xl320_side_start_segment(nLayer, width, withHole);
   translate([0, width/2, 0])
     ollo_straight_segment(height-width/2, nLayer, 4*OlloSpacing);
 }
 
-module base_frame(height, nLayer=1, width=OlloSegmentWidth, tolerance=FrameTolerance) {
+module base_frame(height, nLayer=1, width=OlloSegmentWidth, tolerance=FrameTolerance, withHole=false) {
 
   thickness = ollo_segment_thickness(nLayer);
 
   translate([0, -1.5*OlloSpacing, 0])
     rotate([-90,0,90]) {
       translate([0,0,-MotorWidth/2-thickness/2-tolerance])
-        side_branch(height, nLayer, width);
+        side_branch(height, nLayer, width, withHole);
       mirror([0,0,1])
         translate([0,0,-MotorWidth/2-thickness/2-tolerance])
-          side_branch(height, nLayer, width);
+          side_branch(height, nLayer, width, withHole);
     }
 }
 
-module circular_base_frame(radius=CircularBaseFrameRadius, height=CircularBaseFrameHeight, nLayer=1, width=OlloSegmentWidth) {
+module circular_base_frame(radius=CircularBaseFrameRadius, height=CircularBaseFrameHeight, nLayer=1, width=OlloSegmentWidth, withHole=false) {
 
   thickness = ollo_segment_thickness(nLayer);
 
-  base_frame(height+thickness);
+  base_frame(height+thickness, withHole=withHole);
   translate([0,0,-height-thickness])
     cylinder(r=radius, h=thickness);
 
