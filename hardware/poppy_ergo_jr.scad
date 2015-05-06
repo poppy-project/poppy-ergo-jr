@@ -10,12 +10,17 @@ use <specific_frames/pen_holder_frame.scad>
 use <specific_frames/cylinder_head_frame.scad>
 use <specific_frames/lamp_head_frame.scad>
 use <specific_frames/raspberry_pi_Bplus_base_frame.scad>
+use <specific_frames/wheel_tools.scad>
 
+
+use <../../poppy-4wheels-mini/hardware/poppy_4wheels_mini.scad>
 
 use <robotis-scad/frames/side_to_side_frame.scad>
 use <robotis-scad/frames/three_ollo_to_horn_frame.scad>
 use <robotis-scad/frames/U_horn_to_horn_frame.scad>
 use <robotis-scad/frames/U_three_ollo_to_horn_frame.scad>
+use <robotis-scad/frames/U_three_ollo_frame.scad>
+
 
 use <MCAD/rotate.scad>
 
@@ -72,6 +77,8 @@ module add_end_tool(endTool) {
     cylinder_head_frame(length=F);
   if (endTool=="lamp_head")
     lamp_head_frame(length=F);
+  if (endTool=="simple_U")
+    U_three_ollo_frame(length=F);
 }
 
 // Testing
@@ -93,7 +100,32 @@ if (p==1) {
   }
 
   translate([200,0,0]) {
+    translate([0,-3*OlloSpacing,0])
+      circular_vertical_raspberry_pi_Bplus_base_frame_with_raspberry_board();
     poppy_ergo_jr(endTool="lamp_head");
+  }
+
+
+  translate([300,0,0]) {
+    translate([0, - RaspberryPiBplusWidth/2 - RaspberryPiBplusFrameDistanceBoardToMotor - MotorLength + MotorAxisOffset, -MotorHeight/2-ollo_segment_thickness(1)]) {
+
+      raspberry_pi_Bplus_base_frame_with_wheels();
+
+      translate([0,RaspberryPiBplusWidth+RaspberryPiBplusFrameDistanceBoardToMotor,MotorHeight/2+ollo_segment_thickness(1)])
+        xl320();
+      translate([0,RaspberryPiBplusFrameLenght-RaspberryPiBplusWidth/2-RaspberryPiBplusFrameCameraDistFromEnd,0])
+        passive_wheel();
+
+      translate([-RaspberryPiBplusFrameWidth/2+MotorHeight/2,1.5*OlloSpacing,-MotorHeight/2])
+        rotate([0,-90,0])
+          add_wheel("lego");
+
+      translate([RaspberryPiBplusFrameWidth/2-MotorHeight/2,1.5*OlloSpacing,-MotorHeight/2])
+        rotate([0,90,0])
+          add_wheel("lego");
+    }
+
+    poppy_ergo_jr(endTool="simple_U");
   }
 
 }

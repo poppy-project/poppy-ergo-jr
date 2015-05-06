@@ -76,7 +76,7 @@ module raspberry_pi_Bplus_base_frame_with_raspberry_board(boardHeight=5, holeTyp
 
 }
 
-module circular_vertical_raspberry_pi_Bplus_base_frame(radius=CircularBaseFrameRadius, boardHeight=5, boardDistFromCenter=7+MotorHeight/2+2*OlloLayerThickness, cameraDistFromCenter=12+MotorLength-MotorAxisOffset, nLayer=1) {
+module circular_vertical_raspberry_pi_Bplus_base_frame(radius=CircularBaseFrameRadius, boardHeight=0, boardDistFromCenter=7+MotorHeight/2+2*OlloLayerThickness, cameraDistFromCenter=12+MotorLength-MotorAxisOffset, nLayer=1) {
 
   rotate([0,0,180])
     circular_base_frame(radius=CircularBaseFrameRadius, withHole=true);
@@ -89,18 +89,16 @@ module circular_vertical_raspberry_pi_Bplus_base_frame(radius=CircularBaseFrameR
         elliptic_segment(RaspberryPiBplusWidth, width=4*CircularBaseFrameRadius, heigth=4*CircularBaseFrameRadius, wallThickness=CircularBaseFrameRadius);
   }*/
   translate([0,cameraDistFromCenter,-MotorHeight/2])
-    add_raspberry_camera_holder();
+    add_raspberry_camera_holder(boardHeight);
 }
 
-module circular_vertical_raspberry_pi_Bplus_base_frame_with_raspberry_board(radius=CircularBaseFrameRadius, boardHeight=5, boardDistFromCenter=7+MotorHeight/2+2*OlloLayerThickness, cameraDistFromCenter=12+MotorLength-MotorAxisOffset, nLayer=1) {
+module circular_vertical_raspberry_pi_Bplus_base_frame_with_raspberry_board(radius=CircularBaseFrameRadius, boardHeight=0, boardDistFromCenter=7+MotorHeight/2+2*OlloLayerThickness, cameraDistFromCenter=12+MotorLength-MotorAxisOffset, nLayer=1) {
 
   circular_vertical_raspberry_pi_Bplus_base_frame(radius, boardHeight, boardDistFromCenter, cameraDistFromCenter, nLayer);
 
   rotate([-90,0,180])
     translate([0,-boardHeight-RaspberryPiBplusWidth/2+MotorHeight/2,boardDistFromCenter])
       add_raspberry_pi_Bplus();
-
-
 }
 
 
