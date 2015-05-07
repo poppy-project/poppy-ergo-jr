@@ -20,7 +20,7 @@ module wheels_holes(withCableHole=true, nLayer=1, spaceBetweenHoles=3*OlloSpacin
     }
 }
 
-module passive_wheel(height=MotorHeight/2+legoWheelDiameter/2, diameter=25, spaceBetweenHoles=2*OlloSpacing) {
+module passive_wheel(height=MotorWidth/2+legoWheelDiameter/2, diameter=25, spaceBetweenHoles=2*OlloSpacing) {
 
   difference() {
     translate([0,0,-height+diameter/2]) {
