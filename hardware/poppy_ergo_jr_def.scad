@@ -3,7 +3,7 @@ include <robotis-scad/frames/frame_def.scad>
 include <specific_frames/specific_frame_def.scad>
 
 BaseRadius = CircularBaseFrameRadius;
-BaseHeight = CircularBaseFrameHeight+FrameTolerance;
+BaseHeight = CircularBaseFrameHeight;
 
 A = 25;
 B = 30;

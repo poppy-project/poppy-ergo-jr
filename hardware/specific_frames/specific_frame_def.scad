@@ -25,6 +25,6 @@ RaspberryPiBplusFrameLenght = RaspberryPiBplusWidth + RaspberryPiBplusFrameDista
 
 RaspberryPiBplusFrameCornerRadius = 3;
 
-RaspberryPiBplusFrameHeight = MotorHeight/2;
+RaspberryPiBplusFrameHeight = CircularBaseFrameHeight + 1;
 
 RaspberryPiBplusFramecameraDistFromEnd = 10;
