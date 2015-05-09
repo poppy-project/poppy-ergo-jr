@@ -1,19 +1,10 @@
-include <robotis-scad/ollo/ollo_def.scad>
-include <robotis-scad/dynamixel/xl320_def.scad>
-include <specific_frames/specific_frame_def.scad>
 include <poppy_ergo_jr_def.scad>
 
+include <robotis-scad/ollo/ollo_def.scad>
+include <robotis-scad/dynamixel/xl320_def.scad>
+include <robotis-scad/specific_frames/specific_frame_def.scad>
+
 use <robotis-scad/dynamixel/xl320.scad>
-
-use <specific_frames/base_frame.scad>
-use <specific_frames/pen_holder_frame.scad>
-use <specific_frames/cylinder_head_frame.scad>
-use <specific_frames/lamp_head_frame.scad>
-use <specific_frames/raspberry_pi_Bplus_base_frame.scad>
-use <specific_frames/wheel_tools.scad>
-
-
-use <../../poppy-4wheels-mini/hardware/poppy_4wheels_mini.scad>
 
 use <robotis-scad/frames/side_to_side_frame.scad>
 use <robotis-scad/frames/three_ollo_to_horn_frame.scad>
@@ -21,6 +12,12 @@ use <robotis-scad/frames/U_horn_to_horn_frame.scad>
 use <robotis-scad/frames/U_three_ollo_to_horn_frame.scad>
 use <robotis-scad/frames/U_three_ollo_frame.scad>
 
+use <robotis-scad/specific_frames/base_frame.scad>
+use <robotis-scad/specific_frames/pen_holder_frame.scad>
+use <robotis-scad/specific_frames/cylinder_head_frame.scad>
+use <robotis-scad/specific_frames/lamp_head_frame.scad>
+use <robotis-scad/specific_frames/raspberry_pi_Bplus_base_frame.scad>
+use <robotis-scad/specific_frames/wheel_tools.scad>
 
 use <MCAD/rotate.scad>
 

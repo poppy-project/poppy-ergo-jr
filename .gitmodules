@@ -10,3 +10,6 @@
 [submodule "hardware/raspberry-scad"]
 	path = hardware/raspberry-scad
 	url = https://github.com/jgrizou/raspberry-scad.git
+[submodule "hardware/lego-scad"]
+	path = hardware/lego-scad
+	url = https://github.com/jgrizou/lego-scad.git
