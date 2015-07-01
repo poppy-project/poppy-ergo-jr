@@ -24,12 +24,12 @@
   },
   "motors": {
     "m1": {
-      "offset": -45.0,
+      "offset": 0.0,
       "type": "XL-320",
       "id": 3,
       "angle_limit": [
-        -135.0,
-        45.0
+        -90.0,
+        90.0
       ],
       "orientation": "direct"
     },
@@ -54,12 +54,12 @@
       "orientation": "indirect"
     },
     "m4": {
-      "offset": -45.0,
+      "offset": 0.0,
       "type": "XL-320",
       "id": 11,
       "angle_limit": [
-        -135.0,
-        45.0
+        -90.0,
+        90.0
       ],
       "orientation": "direct"
     },
