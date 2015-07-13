@@ -87,41 +87,5 @@ echo("##########");
 p = 1;
 if (p==1) {
   circular_base_frame(BaseRadius, BaseHeight);
-  poppy_ergo_jr(endTool="cylinder_head");
-
-  translate([100,0,0]) {
-    translate([0, - RaspberryPiBplusWidth/2 - RaspberryPiBplusFrameDistanceBoardToMotor - MotorLength + MotorAxisOffset, -MotorHeight/2-ollo_segment_thickness(1)])
-      raspberry_pi_Bplus_base_frame_with_raspberry_board();
-
-    poppy_ergo_jr(endTool="pen_holder");
-  }
-
-  translate([200,0,0]) {
-    translate([0,-3*OlloSpacing,0])
-      circular_vertical_raspberry_pi_Bplus_base_frame_with_raspberry_board();
-    poppy_ergo_jr(endTool="lamp_head");
-  }
-
-  translate([300,0,0]) {
-    translate([0, - RaspberryPiBplusWidth/2 - RaspberryPiBplusFrameDistanceBoardToMotor - MotorLength + MotorAxisOffset, -MotorHeight/2-ollo_segment_thickness(1)]) {
-
-      raspberry_pi_Bplus_base_frame_with_wheels();
-
-      translate([0,RaspberryPiBplusWidth+RaspberryPiBplusFrameDistanceBoardToMotor,MotorHeight/2+ollo_segment_thickness(1)])
-        xl320();
-      translate([0,RaspberryPiBplusFrameLenght-RaspberryPiBplusWidth/2-RaspberryPiBplusFrameCameraDistFromEnd,-RaspberryPiBplusFrameHeight+MotorHeight/2])
-        passive_wheel();
-
-      translate([-RaspberryPiBplusFrameWidth/2+MotorHeight/2,1.5*OlloSpacing,-RaspberryPiBplusFrameHeight])
-        rotate([0,-90,0])
-          add_wheel("lego");
-
-      translate([RaspberryPiBplusFrameWidth/2-MotorHeight/2,1.5*OlloSpacing,-RaspberryPiBplusFrameHeight])
-        rotate([0,90,0])
-          add_wheel("lego");
-    }
-
-    poppy_ergo_jr(endTool="simple_U");
-  }
-
+  poppy_ergo_jr(endTool="lamp_head");
 }
