@@ -16,7 +16,7 @@ use <robotis-scad/specific_frames/base_frame.scad>
 use <robotis-scad/specific_frames/pen_holder_frame.scad>
 use <robotis-scad/specific_frames/cylinder_head_frame.scad>
 use <robotis-scad/specific_frames/lamp_head_frame.scad>
-use <robotis-scad/specific_frames/raspberry_pi_Bplus_base_frame.scad>
+use <robotis-scad/specific_frames/flower_pot_frame.scad>
 use <robotis-scad/specific_frames/wheel_tools.scad>
 
 use <MCAD/rotate.scad>
@@ -86,6 +86,13 @@ echo("##########");
 
 p = 1;
 if (p==1) {
-  circular_base_frame(BaseRadius, BaseHeight);
+  translate([0,0,-BaseHeight-2*OlloLayerThickness])
+    basic_flower_pot_frame();
+
+  difference() {
+    circular_base_frame(BaseRadius, BaseHeight);
+    translate([0,0,-BaseHeight-OlloLayerThickness/2])
+      ollo_holes_flower_pot();
+  }
   poppy_ergo_jr(endTool="lamp_head");
 }
