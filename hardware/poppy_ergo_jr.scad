@@ -86,24 +86,33 @@ module circular_base_flower_pot() {
   difference() {
     circular_base_frame(BaseRadius, BaseHeight);
 
-    translate([0,0,-BaseHeight-OlloLayerThickness/2])
+    translate([0,0,-BaseHeight-OlloLayerThickness/2]){
+
       ollo_holes_flower_pot();
 
-      translate([0,0,-BaseHeight-OlloLayerThickness/2])
-        rotate([0,0,90]) {
-          translate([0,RaspberryPiBplusWidth/2+OlloSpacing/2,0])
-            threeOlloHoles();
+      rotate([0,0,90]) {
+        translate([0,RaspberryPiBplusWidth/2+OlloSpacing/2,0])
+          threeOlloHoles();
 
-          translate([0,-RaspberryPiBplusWidth/2-OlloSpacing/2,0])
-            threeOlloHoles();
+        translate([0,-RaspberryPiBplusWidth/2-OlloSpacing/2,0])
+          threeOlloHoles();
 
-          translate([0,RaspberryPiBplusWidth/2-OlloSpacing,0])
-            rounded_cube(RaspberryPiBplusHolderFrameSupportHeight-2*OlloLayerThickness, 2*OlloSpacing, OlloLayerThickness, RaspberryPiBplusHolesDiameter, center=true);
+        translate([0,RaspberryPiBplusWidth/2-OlloSpacing,0])
+          rounded_cube(RaspberryPiBplusHolderFrameSupportHeight-2*OlloLayerThickness, 2*OlloSpacing, OlloLayerThickness, RaspberryPiBplusHolesDiameter, center=true);
 
-          translate([0,-RaspberryPiBplusWidth/2+OlloSpacing,0])
-            rounded_cube(RaspberryPiBplusHolderFrameSupportHeight-2*OlloLayerThickness, 2*OlloSpacing, OlloLayerThickness, RaspberryPiBplusHolesDiameter, center=true);
-        }
+        translate([0,-RaspberryPiBplusWidth/2+OlloSpacing,0])
+          rounded_cube(RaspberryPiBplusHolderFrameSupportHeight-2*OlloLayerThickness, 2*OlloSpacing, OlloLayerThickness, RaspberryPiBplusHolesDiameter, center=true);
+      }
+
+      translate([0,BaseRadius-2*OlloSpacing,0])
+        rounded_cube(20,1, OlloLayerThickness, 0.5, center=true);
+
+      translate([0,-BaseRadius+2*OlloSpacing,0])
+        rounded_cube(20,1, OlloLayerThickness, 0.5, center=true);
+    }
   }
+
+
 }
 
 module poppy_ergo_jr_flower_pot() {
@@ -132,8 +141,8 @@ module poppy_ergo_jr_flower_pot_view_inside() {
       basic_flower_pot_frame();
 
     rotate([0,0,-90])
-    translate([0,-50,-100])
-    cube([200,100,200], center=true);
+    translate([0,-50,0])
+    cube([200,100,300], center=true);
     }
 
     circular_base_flower_pot();
@@ -156,9 +165,9 @@ echo("##########");
 
 p = 1;
 if (p==1) {
-  poppy_ergo_jr_flower_pot();
+  poppy_ergo_jr_flower_pot_view_inside();
   translate([200,0,0])
-    poppy_ergo_jr_flower_pot_view_inside();
+    poppy_ergo_jr_flower_pot();
 }
 if (p==2) {
   circular_base_flower_pot();
