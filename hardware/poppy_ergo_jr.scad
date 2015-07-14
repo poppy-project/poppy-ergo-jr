@@ -146,8 +146,6 @@ module poppy_ergo_jr_flower_pot_view_inside() {
     translate([0,0,OlloLayerThickness])
       add_raspberry_pi_Bplus();
     }
-
-
 }
 
 // Testing
