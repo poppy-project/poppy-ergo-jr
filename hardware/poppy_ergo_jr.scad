@@ -4,6 +4,7 @@ include <robotis-scad/ollo/ollo_def.scad>
 include <robotis-scad/dynamixel/xl320_def.scad>
 include <robotis-scad/specific_frames/specific_frame_def.scad>
 
+use <robotis-scad/ollo/ollo_tools.scad>
 use <robotis-scad/dynamixel/xl320.scad>
 
 use <robotis-scad/frames/side_to_side_frame.scad>
@@ -17,9 +18,12 @@ use <robotis-scad/specific_frames/pen_holder_frame.scad>
 use <robotis-scad/specific_frames/cylinder_head_frame.scad>
 use <robotis-scad/specific_frames/lamp_head_frame.scad>
 use <robotis-scad/specific_frames/flower_pot_frame.scad>
-use <robotis-scad/specific_frames/wheel_tools.scad>
+use <robotis-scad/specific_frames/raspberry_pi_Bplus_base_frame.scad>
+
+use <raspberry-scad/raspberry_pi_Bplus_tools.scad>
 
 use <MCAD/rotate.scad>
+use <MCAD/rounded_cube.scad>
 
 module poppy_ergo_jr(direction="front", endTool="pen_holder"){
   if (direction == "front")
@@ -78,6 +82,74 @@ module add_end_tool(endTool) {
     U_three_ollo_frame(length=F);
 }
 
+module circular_base_flower_pot() {
+  difference() {
+    circular_base_frame(BaseRadius, BaseHeight);
+
+    translate([0,0,-BaseHeight-OlloLayerThickness/2])
+      ollo_holes_flower_pot();
+
+      translate([0,0,-BaseHeight-OlloLayerThickness/2])
+        rotate([0,0,90]) {
+          translate([0,RaspberryPiBplusWidth/2+OlloSpacing/2,0])
+            threeOlloHoles();
+
+          translate([0,-RaspberryPiBplusWidth/2-OlloSpacing/2,0])
+            threeOlloHoles();
+
+          translate([0,RaspberryPiBplusWidth/2-OlloSpacing,0])
+            rounded_cube(RaspberryPiBplusHolderFrameSupportHeight-2*OlloLayerThickness, 2*OlloSpacing, OlloLayerThickness, RaspberryPiBplusHolesDiameter, center=true);
+
+          translate([0,-RaspberryPiBplusWidth/2+OlloSpacing,0])
+            rounded_cube(RaspberryPiBplusHolderFrameSupportHeight-2*OlloLayerThickness, 2*OlloSpacing, OlloLayerThickness, RaspberryPiBplusHolesDiameter, center=true);
+        }
+  }
+}
+
+module poppy_ergo_jr_flower_pot() {
+
+    translate([0,0,-BaseHeight-1.5*OlloLayerThickness])
+      basic_flower_pot_frame();
+
+    circular_base_flower_pot();
+
+    poppy_ergo_jr(endTool="lamp_head");
+
+    translate([0,OlloSpacing,-RaspberryPiBplusLength/2-RaspberryPiBplusHolderFrameDistSupportToBoard-BaseHeight-OlloLayerThickness])
+    rotate([90,90,0]) {
+    raspberry_pi_Bplus_holder_frame(OlloLayerThickness);
+    translate([0,0,OlloLayerThickness])
+      add_raspberry_pi_Bplus();
+    }
+
+
+}
+
+module poppy_ergo_jr_flower_pot_view_inside() {
+
+  difference() {
+    translate([0,0,-BaseHeight-1.5*OlloLayerThickness])
+      basic_flower_pot_frame();
+
+    rotate([0,0,-90])
+    translate([0,-50,-100])
+    cube([200,100,200], center=true);
+    }
+
+    circular_base_flower_pot();
+
+    poppy_ergo_jr(endTool="lamp_head");
+
+    translate([0,OlloSpacing,-RaspberryPiBplusLength/2-RaspberryPiBplusHolderFrameDistSupportToBoard-BaseHeight-OlloLayerThickness])
+    rotate([90,90,0]) {
+    raspberry_pi_Bplus_holder_frame(OlloLayerThickness);
+    translate([0,0,OlloLayerThickness])
+      add_raspberry_pi_Bplus();
+    }
+
+
+}
+
 // Testing
 echo("##########");
 echo("In poppy_ergo_jr.scad");
@@ -86,13 +158,10 @@ echo("##########");
 
 p = 1;
 if (p==1) {
-  translate([0,0,-BaseHeight-2*OlloLayerThickness])
-    basic_flower_pot_frame();
-
-  difference() {
-    circular_base_frame(BaseRadius, BaseHeight);
-    translate([0,0,-BaseHeight-OlloLayerThickness/2])
-      ollo_holes_flower_pot();
-  }
-  poppy_ergo_jr(endTool="lamp_head");
+  poppy_ergo_jr_flower_pot();
+  translate([200,0,0])
+    poppy_ergo_jr_flower_pot_view_inside();
+}
+if (p==2) {
+  circular_base_flower_pot();
 }
