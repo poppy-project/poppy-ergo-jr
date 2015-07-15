@@ -124,7 +124,7 @@ module poppy_ergo_jr_flower_pot() {
 
     poppy_ergo_jr(endTool="lamp_head");
 
-    translate([0,OlloSpacing,-RaspberryPiBplusLength/2-RaspberryPiBplusHolderFrameDistSupportToBoard-BaseHeight-OlloLayerThickness])
+    translate([0,OlloSpacing,-RaspberryPiBplusLength/2-RaspberryPiBplusHolderFrameDistSupportToBoard-BaseHeight-1.5*OlloLayerThickness])
     rotate([90,90,0]) {
     raspberry_pi_Bplus_holder_frame(OlloLayerThickness);
     translate([0,0,OlloLayerThickness])
@@ -149,7 +149,7 @@ module poppy_ergo_jr_flower_pot_view_inside() {
 
     poppy_ergo_jr(endTool="lamp_head");
 
-    translate([0,OlloSpacing,-RaspberryPiBplusLength/2-RaspberryPiBplusHolderFrameDistSupportToBoard-BaseHeight-OlloLayerThickness])
+    translate([0,OlloSpacing,-RaspberryPiBplusLength/2-RaspberryPiBplusHolderFrameDistSupportToBoard-BaseHeight-1.5*OlloLayerThickness])
     rotate([90,90,0]) {
     raspberry_pi_Bplus_holder_frame(OlloLayerThickness);
     translate([0,0,OlloLayerThickness])
