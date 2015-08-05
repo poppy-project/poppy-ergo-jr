@@ -89,7 +89,8 @@
     "camera": {
       "type": "OpenCVCamera",
       "index": 0,
-      "fps": 20.0
+      "fps": 20.0,
+      "resolution": [640, 480]
     }
   }
 }
