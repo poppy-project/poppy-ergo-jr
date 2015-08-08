@@ -7,7 +7,8 @@
         "base",
         "tip"
       ],
-      "port": "auto"
+      "port": "auto",
+      "syncloop": "LightDxlController"
     }
   },
   "motorgroups": {
@@ -82,6 +83,20 @@
         90.0
       ],
       "orientation": "indirect"
+    }
+  },
+  "sensors": {
+    "camera": {
+      "type": "OpenCVCamera",
+      "index": 0,
+      "fps": 20.0,
+      "resolution": [640, 480]
+    },
+    "marker_detector": {
+      "type": "MarkerDetector",
+      "cameras": ["camera"],
+      "freq": 10.0,
+      "need_robot": true
     }
   }
 }
