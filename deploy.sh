@@ -5,11 +5,11 @@ git commit -m "deploying"
 git push origin master
 
 # on the first run create the gh-pages branch (uncomment next line)
-# git branch gh-pages
+git branch gh-pages
 
 # creating  local gh-pages branch (on the second and subsequent runs checkout and merge from master)
-git checkout gh-pages
-git merge master
+# git checkout gh-pages
+# git merge master
 
 # saving work on local branch
 git add .
