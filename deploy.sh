@@ -9,12 +9,12 @@ git branch -D gh-pages
 git checkout --orphan gh-pages
 
 ./build.py --full
-mv simulator .tmp
+mv simulator .simulator
 
 rm -rf *
 rm .gitignore
 
-mv .tmp/* .
+mv .simulator simulator
 rm -r .tmp
 
 ##
