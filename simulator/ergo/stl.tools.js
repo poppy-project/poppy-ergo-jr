@@ -1,11 +1,37 @@
+var stlFolder = 'stl';
+var stlFiles = [
+  'U_horn_to_horn.stl',
+  'XL320_box.stl',
+  'lamp_head.stl',
+  'U_side_to_horn.stl',
+  'XL320_top_horn.stl',
+  'shift_one_side.stl',
+  'XL320_bottom_horn.stl',
+  'base.stl'
+];
+var stlGeometry = [];
 
+var loadAllSTL = function () {
+
+  console.log('Loading STL files');
+  var loader = new THREE.STLLoader();
+
+  stlFiles.forEach( function (file, i ) {
+
+    var src = stlFolder + '/' + file
+    loader.load(src, function ( geometry ) {
+      stlGeometry[i] = geometry;
+      console.log(src +  ' loaded');
+    });
+
+  });
+}
 
 var STLLoad = function (group, src, material, position, rotation, scale) {
 
   var loader = new THREE.STLLoader();
-  loader.addEventListener( 'load', function ( event ) {
+  loader.load(src, function ( geometry ) {
 
-    var geometry = event.content;
     var mesh = new THREE.Mesh( geometry, material );
 
     mesh.position = position;
@@ -18,27 +44,36 @@ var STLLoad = function (group, src, material, position, rotation, scale) {
     group.add( mesh );
 
   } );
-  loader.load( src );
-}
+};
 
 // This must be done better, but the event loader above is blocking me
 // If possible I do not want to use an event for the loader, or at least I want to add additional paramters
 // STLPart should just be a subclass of THREE.Object3D(), thus avoiding the not that nice loadIn function (again due to the event based approach which I don't know how to bypass yet)
-var STLPart = function(stlFile) {
 
-  //you must register at least the
-  this.src = stlFile; //link to the stl file
+// Super class, this is simply THREE.Object3D but keeping this dummy super class for experimentation
+var STLPart = function(stlFile, material) {
 
-  // those are default param
-  this.material = new THREE.MeshPhongMaterial( { ambient: 0x555555, color: 0xAAAAAA, specular: 0x111111, shininess: 200 } );
+  THREE.Object3D.call(this);
 
-  this.position = new THREE.Vector3( 0, 0, 0 );
-  this.rotation = new THREE.Vector3( 0, 0, 0 );
-  this.scale = new THREE.Vector3( 1, 1, 1 );
+  var i = stlFiles.indexOf(stlFile);
+  if ( i !== -1) {
 
-};
+    var mesh = new THREE.Mesh( stlGeometry[i], material )
 
-STLPart.prototype.loadIn = function(group) {
-  //load a mesh in a group
-  STLLoad(group, this.src, this.material, this.position, this.rotation, this.scale);
+    mesh.castShadow = true;
+		mesh.receiveShadow = true;
+
+    this.add(mesh);
+
+  } else {
+    console.log(stlFile + ' not in the stl library');
+    return undefined;
+  }
 }
+
+STLPart.prototype = Object.create(THREE.Object3D.prototype);
+STLPart.prototype.constructor = STLPart;
+
+
+
+loadAllSTL();

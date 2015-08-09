@@ -15,13 +15,12 @@ var XL320 = function() {
 
   Assembly.call(this);
 
-  var body = new XL320Body();
-  body.loadIn(this);
+  var body = new STLPart('XL320_box.stl', XL320BodyMaterial);
+  this.add(body);
 
-  var hornTop = new XL320HornTop();
+  var hornTop = new STLPart('XL320_top_horn.stl', XL320HornTopMaterial);
   hornTop.position.z = MotorHeight/2.0 + OlloLayerThickness/2.0;
-  hornTop.loadIn(this);
-
+  this.add(hornTop);
 };
 
 XL320.prototype = Object.create(Assembly.prototype);
@@ -32,9 +31,9 @@ var XL320TwoHorns = function () {
 
   XL320.call(this);
 
-  var hornBottom = new XL320HornBottom();
+  var hornBottom = new STLPart('XL320_bottom_horn.stl', XL320HornBottomMaterial);
   hornBottom.position.z = - MotorHeight/2.0 - OlloLayerThickness/2.0;
-  hornBottom.loadIn(this);
+  this.add(hornBottom);
 
 }
 
@@ -46,8 +45,8 @@ var BaseSegment = function() {
 
   Assembly.call(this);
 
-  var base = new Base();
-  base.loadIn(this);
+  var base = new STLPart('base.stl', PrintedPartsMaterial);
+  this.add(base);
 
   var xl320 = new XL320();
   this.add(xl320);
@@ -62,11 +61,11 @@ var Segment1 = function() {
 
   Assembly.call(this);
 
-  var part = new UHornToHorn();
+  var part = new STLPart('U_horn_to_horn.stl', PrintedPartsMaterial);
   part.rotation.x = -Math.PI/2;
   part.rotation.y = -Math.PI/2;
   part.position.z = UHornToHornLength;
-  part.loadIn(this);
+  this.add(part);
 };
 
 Segment1.prototype = Object.create(Assembly.prototype);
@@ -77,14 +76,14 @@ var SideToSide = function() {
 
   Assembly.call(this);
 
-  var left = new ShiftOneSide();
+  var left = new STLPart('shift_one_side.stl', PrintedPartsMaterial);
   left.position.z = - MotorWidth/2.0 - OlloLayerThickness/2.0;
-  left.loadIn(this);
+  this.add(left);
 
-  var right = new ShiftOneSide();
+  var right = new STLPart('shift_one_side.stl', PrintedPartsMaterial);
   right.rotation.y = Math.PI;
   right.position.z = MotorWidth/2.0 + OlloLayerThickness/2.0;
-  right.loadIn(this);
+  this.add(right);
 };
 
 SideToSide.prototype = Object.create(Assembly.prototype);
@@ -117,11 +116,11 @@ var Segment3 = function() {
   var xl320 = new XL320TwoHorns();
   this.add(xl320);
 
-  var part = new USideToHorn();
+  var part = new STLPart('U_side_to_horn.stl', PrintedPartsMaterial);
   part.rotation.x = Math.PI;
   part.rotation.y = Math.PI/2.0;
   part.position.y = -MotorLength + MotorAxisOffset+ OlloSpacing/2.0;
-  part.loadIn(this);
+  this.add(part);
 };
 
 Segment3.prototype = Object.create(Assembly.prototype);
@@ -170,11 +169,11 @@ var Segment6 = function() {
   var xl320 = new XL320TwoHorns();
   this.add(xl320);
 
-  var part = new LampHead();
+  var part = new STLPart('lamp_head.stl', PrintedPartsMaterial);
   part.rotation.x = Math.PI;
   part.rotation.y = Math.PI/2.0;
   part.position.y = - 4.0 * OlloSpacing;
-  part.loadIn(this);
+  this.add(part);
 };
 
 Segment6.prototype = Object.create(Assembly.prototype);

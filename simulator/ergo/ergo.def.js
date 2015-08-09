@@ -7,7 +7,8 @@ var XL320HornTopMaterial = new THREE.MeshPhongMaterial( { ambient: 0x555555, col
 
 var XL320HornBottomMaterial = new THREE.MeshPhongMaterial( { ambient: 0x555555, color: 0xAAAAAA, specular: 0xAAAAAA, shininess: 200} );
 
-var PrintedPartsMaterial = new THREE.MeshPhongMaterial( { ambient: 0x555555, color: 0x1975FF, specular: 0x1975FF, shininess: 20 } );
+var printedPartsColor = 0x1975FF;
+var PrintedPartsMaterial = new THREE.MeshPhongMaterial( { ambient: 0x555555, color: printedPartsColor, specular: printedPartsColor, shininess: 20 } );
 
 // Diameter of the body of Ollo Rivet
 var OlloInDiameter = 4;
