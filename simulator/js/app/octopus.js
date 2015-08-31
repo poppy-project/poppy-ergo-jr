@@ -61,7 +61,7 @@ define( ["ergojr", "dat"], function(ERGOJR, dat ) {
       var httpRequest = new XMLHttpRequest()
 
       httpRequest.onreadystatechange = function (data) {
-        octopus.guiData["M"+i] = 0; //data.present_position;
+        octopus.guiData["M"+i] = data.present_position;
       }
 
       var url = "http://" + octopus.guiData.remoteIP + ":" + octopus.guiData.remotePORT + "/motor/m" + i + "/register/present_position";
