@@ -12,6 +12,7 @@ function ( container, THREE, camera, controls, light, renderer, scene, stater, _
         if (loaded === total) {
           app.ergo = new ERGOJR.Robot();
           scene.add(app.ergo);
+          octopus.setErgo(app.ergo);
         }
       };
     },
@@ -20,11 +21,10 @@ function ( container, THREE, camera, controls, light, renderer, scene, stater, _
       window.requestAnimationFrame(app.animate);
     },
     render: function () {
-      controls.update();
-      octopus.update(app.ergo);
-
-      renderer.render( scene, camera );
       stater.update();
+      controls.update();
+      octopus.update();
+      renderer.render( scene, camera );
     }
   };
   return app;

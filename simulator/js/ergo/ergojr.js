@@ -32,10 +32,6 @@ ERGOJR.BaseSegment = function() {
 ERGOJR.BaseSegment.prototype = Object.create(THREE.Object3D.prototype);
 ERGOJR.BaseSegment.prototype.constructor = ERGOJR.BaseSegment;
 
-ERGOJR.BaseSegment.prototype.setColor = function(color) {
-  this.base.material.color = color;
-}
-
 // Segment 1 - simply U_horn_to_horn
 ERGOJR.Segment1 = function() {
   THREE.Object3D.call(this);
@@ -49,38 +45,33 @@ ERGOJR.Segment1 = function() {
 ERGOJR.Segment1.prototype = Object.create(THREE.Object3D.prototype);
 ERGOJR.Segment1.prototype.constructor = ERGOJR.Segment1;
 
-ERGOJR.Segment1.prototype.setColor = function(color) {
-  this.part.material.color = color;
-}
-
 // SideToSide
 ERGOJR.SideToSide = function() {
   THREE.Object3D.call(this);
 
-  var left = new THREE.Mesh( STLLibrary.geometry['shift_one_side'], ERGOJR.PrintedPartsMaterial);
-  left.position.z = - XL320.MotorWidth/2.0 - OLLO.LayerThickness/2.0;
-  this.add(left);
+  this.left = new THREE.Mesh( STLLibrary.geometry['shift_one_side'], ERGOJR.PrintedPartsMaterial);
+  this.left.position.z = - XL320.MotorWidth/2.0 - OLLO.LayerThickness/2.0;
+  this.add(this.left);
 
-  var right = new THREE.Mesh( STLLibrary.geometry['shift_one_side'], ERGOJR.PrintedPartsMaterial);
-  right.rotation.y = Math.PI;
-  right.position.z = XL320.MotorWidth/2.0 + OLLO.LayerThickness/2.0;
-  this.add(right);
+  this.right = new THREE.Mesh( STLLibrary.geometry['shift_one_side'], ERGOJR.PrintedPartsMaterial);
+  this.right.rotation.y = Math.PI;
+  this.right.position.z = XL320.MotorWidth/2.0 + OLLO.LayerThickness/2.0;
+  this.add(this.right);
 };
 ERGOJR.SideToSide.prototype = Object.create(THREE.Object3D.prototype);
 ERGOJR.SideToSide.prototype.constructor = ERGOJR.SideToSide;
-
 
 // Segment 2 - M2 + SideToSide
 ERGOJR.Segment2 = function() {
   THREE.Object3D.call(this);
 
-  var xl320 = new XL320.Object3DTwoHorns();
-  this.add(xl320);
+  this.xl320 = new XL320.Object3DTwoHorns();
+  this.add(this.xl320);
 
-  var part = new ERGOJR.SideToSide();
-  part.rotation.z = Math.PI;
-  part.position.y = - XL320.MotorLength + XL320.MotorAxisOffset + OLLO.Spacing/2.0;
-  this.add(part);
+  this.part = new ERGOJR.SideToSide();
+  this.part.rotation.z = Math.PI;
+  this.part.position.y = - XL320.MotorLength + XL320.MotorAxisOffset + OLLO.Spacing/2.0;
+  this.add(this.part);
 
 };
 ERGOJR.Segment2.prototype = Object.create(THREE.Object3D.prototype);
@@ -90,16 +81,15 @@ ERGOJR.Segment2.prototype.constructor = ERGOJR.Segment2;
 ERGOJR.Segment3 = function() {
   THREE.Object3D.call(this);
 
-  var xl320 = new XL320.Object3DTwoHorns();
-  this.add(xl320);
+  this.xl320 = new XL320.Object3DTwoHorns();
+  this.add(this.xl320);
 
-  var part = new THREE.Mesh( STLLibrary.geometry['U_side_to_horn'], ERGOJR.PrintedPartsMaterial);
-  part.rotation.x = Math.PI;
-  part.rotation.y = Math.PI/2.0;
-  part.position.y = -XL320.MotorLength + XL320.MotorAxisOffset+ OLLO.Spacing/2.0;
-  this.add(part);
+  this.part = new THREE.Mesh( STLLibrary.geometry['U_side_to_horn'], ERGOJR.PrintedPartsMaterial);
+  this.part.rotation.x = Math.PI;
+  this.part.rotation.y = Math.PI/2.0;
+  this.part.position.y = -XL320.MotorLength + XL320.MotorAxisOffset+ OLLO.Spacing/2.0;
+  this.add(this.part);
 };
-
 ERGOJR.Segment3.prototype = Object.create(THREE.Object3D.prototype);
 ERGOJR.Segment3.prototype.constructor = ERGOJR.Segment3;
 
@@ -107,16 +97,15 @@ ERGOJR.Segment3.prototype.constructor = ERGOJR.Segment3;
 ERGOJR.Segment4 = function() {
   THREE.Object3D.call(this);
 
-  var xl320 = new XL320.Object3D();
-  this.add(xl320);
+  this.xl320 = new XL320.Object3D();
+  this.add(this.xl320);
 
-  var part = new ERGOJR.SideToSide();
-  part.rotation.x = Math.PI;
-  part.rotation.y = Math.PI/2.0;
-  part.position.y = - 3.0 * OLLO.Spacing;
-  this.add(part);
+  this.part = new ERGOJR.SideToSide();
+  this.part.rotation.x = Math.PI;
+  this.part.rotation.y = Math.PI/2.0;
+  this.part.position.y = - 3.0 * OLLO.Spacing;
+  this.add(this.part);
 };
-
 ERGOJR.Segment4.prototype = Object.create(THREE.Object3D.prototype);
 ERGOJR.Segment4.prototype.constructor = ERGOJR.Segment4;
 
@@ -124,15 +113,14 @@ ERGOJR.Segment4.prototype.constructor = ERGOJR.Segment4;
 ERGOJR.Segment5 = function() {
   THREE.Object3D.call(this);
 
-  var xl320 = new XL320.Object3DTwoHorns();
-  this.add(xl320);
+  this.xl320 = new XL320.Object3DTwoHorns();
+  this.add(this.xl320);
 
-  var part = new ERGOJR.SideToSide();
-  part.rotation.x = Math.PI;
-  part.position.y = - 4.0 * OLLO.Spacing;
-  this.add(part);
+  this.part = new ERGOJR.SideToSide();
+  this.part.rotation.x = Math.PI;
+  this.part.position.y = - 4.0 * OLLO.Spacing;
+  this.add(this.part);
 };
-
 ERGOJR.Segment5.prototype = Object.create(THREE.Object3D.prototype);
 ERGOJR.Segment5.prototype.constructor = ERGOJR.Segment5;
 
@@ -140,14 +128,14 @@ ERGOJR.Segment5.prototype.constructor = ERGOJR.Segment5;
 ERGOJR.Segment6 = function() {
   THREE.Object3D.call(this);
 
-  var xl320 = new XL320.Object3DTwoHorns();
-  this.add(xl320);
+  this.xl320 = new XL320.Object3DTwoHorns();
+  this.add(this.xl320);
 
-  var part = new THREE.Mesh( STLLibrary.geometry['lamp_head'], ERGOJR.PrintedPartsMaterial);
-  part.rotation.x = Math.PI;
-  part.rotation.y = Math.PI/2.0;
-  part.position.y = - 4.0 * OLLO.Spacing;
-  this.add(part);
+  this.part = new THREE.Mesh( STLLibrary.geometry['lamp_head'], ERGOJR.PrintedPartsMaterial);
+  this.part.rotation.x = Math.PI;
+  this.part.rotation.y = Math.PI/2.0;
+  this.part.position.y = - 4.0 * OLLO.Spacing;
+  this.add(this.part);
 };
 
 ERGOJR.Segment6.prototype = Object.create(THREE.Object3D.prototype);
@@ -195,3 +183,7 @@ ERGOJR.Robot = function() {
 }
 ERGOJR.Robot.prototype = Object.create(THREE.Object3D.prototype);
 ERGOJR.Robot.prototype.constructor = ERGOJR.Robot;
+
+ERGOJR.Robot.prototype.setColor = function(color) {
+  ERGOJR.PrintedPartsMaterial.color.setHex(color);
+}
