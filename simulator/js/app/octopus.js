@@ -65,7 +65,7 @@ define( ["ergojr", "dat"], function(ERGOJR, dat ) {
       }
 
       var url = "http://" + octopus.guiData.remoteIP + ":" + octopus.guiData.remotePORT + "/motor/m" + i + "/register/present_position";
-      console.log(url);
+      // console.log(url);
       httpRequest.open('GET', url)
       httpRequest.send()
     }
