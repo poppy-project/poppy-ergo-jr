@@ -1,6 +1,4 @@
-define( ["three", "container"], function ( THREE, container ) {
-
-  container.innerHTML = "";
+define( ["three"], function ( THREE, container ) {
 
   var canvasWidth = window.innerWidth;
   var canvasHeight = window.innerHeight;
@@ -10,9 +8,6 @@ define( ["three", "container"], function ( THREE, container ) {
   renderer.gammaOutput = true;
   renderer.setSize(canvasWidth, canvasHeight);
   renderer.setClearColor( 0xAAAAAA, 1.0 );
-
-  container.appendChild( renderer.domElement );
-
 
   window.addEventListener( 'resize', onWindowResize, false );
   function onWindowResize(){

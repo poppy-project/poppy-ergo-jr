@@ -1,14 +1,19 @@
-define( ["threeCore", "camera", "controls", "light", "renderer", "scene", "stater"],
-function ( THREE, camera, controls, light, renderer, scene, stater ) {
+define( ["container", "three", "camera", "controls", "light", "renderer", "scene", "stater", "helpers", "ergojr", "octopus"],
+function ( container, THREE, camera, controls, light, renderer, scene, stater, _, ERGOJR, octopus) {
   var app = {
+    ergo: undefined,
     init: function () {
+      container.innerHTML = "";
+      container.appendChild( renderer.domElement );
+      container.appendChild( stater.domElement );
 
-      var geometry = new THREE.BoxGeometry( 200, 200, 200 );
-      var material = new THREE.MeshPhongMaterial( { ambient: 0x555555, color: 0xAAAAAA, specular: 0xAAAAAA, shininess: 200, opacity: 0.9, transparent: true } );
-
-      var mesh = new THREE.Mesh( geometry, material );
-      scene.add( mesh );
-      
+      THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
+        // console.log(item);
+        if (loaded === total) {
+          app.ergo = new ERGOJR.Robot();
+          scene.add(app.ergo);
+        }
+      };
     },
     animate: function () {
       app.render();
@@ -16,8 +21,10 @@ function ( THREE, camera, controls, light, renderer, scene, stater ) {
     },
     render: function () {
       controls.update();
-      stater.update();
+      octopus.update(app.ergo);
+
       renderer.render( scene, camera );
+      stater.update();
     }
   };
   return app;
