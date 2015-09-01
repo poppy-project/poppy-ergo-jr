@@ -24,5 +24,6 @@ class PoppyErgoJr(AbstractPoppyCreature):
             m.pid = (4, 2, 0)
             m.torque_limit = 70.
 
-        p = HeadFollow(robot, 10, robot.marker_detector, 233511930)
-        robot.attach_primitive(p, 'head_follow')
+        if not robot.simulated:
+            p = HeadFollow(robot, 10, robot.marker_detector, 233511930)
+            robot.attach_primitive(p, 'head_follow')
