@@ -14,6 +14,8 @@ class PoppyErgoJr(AbstractPoppyCreature):
     def setup(cls, robot):
         robot._primitive_manager._filter = partial(sum, axis=0)
 
+        robot.attach_primitive(SafePowerUp(robot), 'safe_power_up')
+
         robot.attach_primitive(Dance(robot), 'dance')
         robot.attach_primitive(Jump(robot), 'jump')
 
