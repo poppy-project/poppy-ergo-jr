@@ -5,8 +5,8 @@ from poppy.creatures import AbstractPoppyCreature
 
 from .jump import Jump
 from .dance import Dance
-from .headfollow import HeadFollow
-from .postures import BasePosture, RestPosture
+from .face_tracking import FaceTracking
+from .postures import (BasePosture, RestPosture, SafePowerUp)
 
 
 class PoppyErgoJr(AbstractPoppyCreature):
@@ -23,7 +23,8 @@ class PoppyErgoJr(AbstractPoppyCreature):
         for m in robot.motors:
             m.pid = (4, 2, 0)
             m.torque_limit = 70.
+            m.led = 'off'
 
         if not robot.simulated:
-            p = HeadFollow(robot, 10, robot.marker_detector, 233511930)
-            robot.attach_primitive(p, 'head_follow')
+            robot.attach_primitive(FaceTracking(robot, 10, robot.face_detector),
+                                   'face_tracking')
