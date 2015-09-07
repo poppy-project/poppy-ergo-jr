@@ -22,10 +22,10 @@ class Dance(LoopPrimitive):
         ]
 
         init_pos = dict([(m.name, 0.0) for m in self.robot.motors])
-        self.robot.goto_position(init_pos, 1., wait=True)
+        self.robot.goto_position(init_pos, 3., wait=True)
 
         for m in self.robot.motors:
-            m.moving_speed = 0.
+            m.moving_speed = 150.
 
         [s.start() for s in self.sinus]
 
