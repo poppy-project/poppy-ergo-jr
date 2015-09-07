@@ -14,6 +14,9 @@ class FaceTracking(LoopPrimitive):
         self.robot.rest_posture.start()
         self.robot.rest_posture.wait_to_stop()
 
+        for m in self.robot._robot.motors:
+            m.led = 'yellow'
+
         self.rest_pos = {m.name: m.present_position for m in self.robot.motors}
         for m in [self.robot.m1, self.robot.m5]:
             m.moving_speed = 50.
@@ -36,3 +39,7 @@ class FaceTracking(LoopPrimitive):
 
             self.robot.m1.goal_position = self.rest_pos['m1'] -x * self.dx
             self.robot.m5.goal_position = self.rest_pos['m5'] + y * self.dy
+
+    def teardown(self):
+        for m in self.robot._robot.motors:
+            m.led = 'off'
