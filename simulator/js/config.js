@@ -12,7 +12,9 @@ var require = {
     'threeCore': { exports: 'THREE' },
     'OrbitControls': { deps: ['threeCore'], exports: 'THREE' },
     'STLLoader': {deps: ['threeCore'], exports: 'THREE'},
-    // --- end THREE sub-components
+    // --- Physi.js sub-components
+    'physiCore': {deps: ['threeCore'], exports: 'Physijs'},
+    //
     'coordinates': {exports: 'Coordinates'},
     'detector': { exports: 'Detector' },
     'stats': { exports: 'Stats' },
@@ -25,12 +27,15 @@ var require = {
     OLLO: '../ergo/ollo',
     XL320: '../ergo/XL320',
     ergojr: '../ergo/ergojr',
-    // --- start THREE sub-components
+    // --- THREE sub-components
     three: '../lib/three',
     threeCore: '../lib/three.min',
     OrbitControls: '../lib/OrbitControls',
     STLLoader: '../lib/STLLoader',
-    // --- end THREE sub-components
+    // --- Physijs sub-components
+    physijs: '../lib/physijs',
+    physiCore: '../lib/physi',
+    //
     coordinates: '../lib/Coordinates',
     detector: '../lib/Detector',
     stats: '../lib/stats.min',
