@@ -1,10 +1,10 @@
 
 // loading stl used
-STLLibrary.add('js/ergo/stl/base.stl', 'base');
-STLLibrary.add('js/ergo/stl/shift_one_side.stl', 'shift_one_side');
-STLLibrary.add('js/ergo/stl/U_side_to_horn.stl', 'U_side_to_horn');
-STLLibrary.add('js/ergo/stl/U_horn_to_horn.stl', 'U_horn_to_horn');
-STLLibrary.add('js/ergo/stl/lamp_head.stl', 'lamp_head');
+STLLibrary.add('js/ergo/stl/binary/base.stl', 'base', 'binary');
+STLLibrary.add('js/ergo/stl/binary/shift_one_side.stl', 'shift_one_side', 'binary');
+STLLibrary.add('js/ergo/stl/binary/U_side_to_horn.stl', 'U_side_to_horn', 'binary');
+STLLibrary.add('js/ergo/stl/binary/U_horn_to_horn.stl', 'U_horn_to_horn', 'binary');
+STLLibrary.add('js/ergo/stl/binary/lamp_head.stl', 'lamp_head', 'binary');
 
 
 var ERGOJR = {};

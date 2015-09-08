@@ -5,7 +5,7 @@ define( ["three"], function ( THREE ) {
   var canvasRatio = canvasWidth / canvasHeight;
 
   var camera = new THREE.PerspectiveCamera( 38, canvasRatio, 1, 10000 );
-  camera.position.set(-200, 200, -500);
+  camera.position.set(-500, 500, -800);
 
   window.addEventListener( 'resize', onWindowResize, false );
   function onWindowResize(){

@@ -6,8 +6,8 @@ var require = {
     // -- ergo
     'STLLibrary': {deps: ['threeCore'], exports: 'STLLibrary'},
     'OLLO': {exports: 'OLLO'},
-    'XL320': {deps: ['STLLibrary', 'OLLO'], exports: 'XL320'},
-    'ergojr': {deps: ['threeCore', 'STLLibrary', 'OLLO', 'XL320'], exports: 'ERGOJR'},
+    'XL320': {deps: ['physiCore', 'STLLibrary', 'OLLO'], exports: 'XL320'},
+    'ergojr': {deps: ['physiCore', 'threeCore', 'STLLibrary', 'OLLO', 'XL320'], exports: 'ERGOJR'},
     // --- Use shim to mix together all THREE.js subcomponents
     'threeCore': { exports: 'THREE' },
     'OrbitControls': { deps: ['threeCore'], exports: 'THREE' },
