@@ -8,6 +8,7 @@ var require = {
     'OLLO': {exports: 'OLLO'},
     'XL320': {deps: ['STLLibrary', 'OLLO'], exports: 'XL320'},
     'ergojr': {deps: ['threeCore', 'STLLibrary', 'OLLO', 'XL320'], exports: 'ERGOJR'},
+    'pypot': {exports: 'PYPOT'},
     // --- Use shim to mix together all THREE.js subcomponents
     'threeCore': { exports: 'THREE' },
     'OrbitControls': { deps: ['threeCore'], exports: 'THREE' },
@@ -25,6 +26,7 @@ var require = {
     OLLO: '../ergo/ollo',
     XL320: '../ergo/XL320',
     ergojr: '../ergo/ergojr',
+    pypot: '../ergo/pypot',
     // --- start THREE sub-components
     three: '../lib/three',
     threeCore: '../lib/three.min',

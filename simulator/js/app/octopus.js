@@ -1,75 +1,56 @@
-define( ["ergojr", "dat"], function(ERGOJR, dat ) {
+define( ["ergojr", "pypot", "gui"], function(ERGOJR, PYPOT, gui ) {
 
   var octopus = {};
-
-  octopus.gui = new dat.GUI();
-  octopus.guiData = {
-    M1: 0.0,
-    M2: 0.0,
-    M3: 0.0,
-    M4: 0.0,
-    M5: 0.0,
-    M6: 0.0,
-
-    partColor: ERGOJR.printedPartsColor,
-
-    remoteStatus: false,
-    remoteIP: "128.0.0.1",
-    remotePORT: "8080",
-
-  };
-
-  var h = octopus.gui.addFolder("Motors angles");
-  h.add( octopus.guiData, "M1", -180.0, 180.0, 0.025).name("M1").listen();
-  h.add( octopus.guiData, "M2", -180.0, 180.0, 0.025).name("M2").listen();
-  h.add( octopus.guiData, "M3", -180.0, 180.0, 0.025).name("M3").listen();
-  h.add( octopus.guiData, "M4", -180.0, 180.0, 0.025).name("M4").listen();
-  h.add( octopus.guiData, "M5", -180.0, 180.0, 0.025).name("M5").listen();
-  h.add( octopus.guiData, "M6", -180.0, 180.0, 0.025).name("M6").listen();
-
-  var colorController = octopus.gui.addColor( octopus.guiData, "partColor").name("Color").listen();
-  colorController.onChange( function(value) {
-    octopus.ergo.setColor(octopus.guiData.partColor);
-  });
-
-  var h = octopus.gui.addFolder("Remote Control");
-  h.add( octopus.guiData, "remoteStatus").name("Enable");
-  h.add( octopus.guiData, "remoteIP").name("IP");
-  h.add( octopus.guiData, "remotePORT").name("PORT");
 
   octopus.setErgo = function(ergo) { // I don't like this, but did not succeed in requiring "app" think more
     octopus.ergo = ergo;
   }
 
+  // setting up callback on gui events
+  gui.guiData.partColor = ERGOJR.printedPartsColor;
+  gui.controller.colorController.onChange( function(value) {
+    octopus.ergo.setColor(new THREE.Color(gui.guiData.partColor));
+  });
+
+  gui.controller.remoteIP.onChange( function(value) {
+    PYPOT.IP = gui.guiData.remoteIP;
+  });
+
+  gui.controller.remotePORT.onChange( function(value) {
+    PYPOT.PORT = gui.guiData.remotePORT;
+  });
+
+  gui.controller.remoteFrequency.onChange( function(value) {
+    PYPOT.FREQ = gui.guiData.remoteFrequency;
+    if (gui.guiData.remoteStatus) {
+      PYPOT.stopPoll();
+      PYPOT.startPoll();
+    }
+  });
+
   octopus.update = function() {
-    if (octopus.guiData.remoteStatus) {
-      octopus.pollPos();
+    if (gui.guiData.remoteStatus) {
+      PYPOT.startPoll();
+      octopus.ergo.S1.rotation.z = PYPOT.motors.M1 * Math.PI/180;
+      octopus.ergo.S2.rotation.z = PYPOT.motors.M2 * Math.PI/180;
+      octopus.ergo.S3.rotation.z = PYPOT.motors.M3 * Math.PI/180;
+      octopus.ergo.S4.rotation.z = PYPOT.motors.M4 * Math.PI/180 + Math.PI/2.0;
+      octopus.ergo.S5.rotation.z = PYPOT.motors.M5 * Math.PI/180;
+      octopus.ergo.S6.rotation.z = PYPOT.motors.M6 * Math.PI/180;
     }
-    if ( octopus.ergo !== undefined ) {
-      octopus.ergo.S1.rotation.z = octopus.guiData.M1 * Math.PI/180;
-      octopus.ergo.S2.rotation.z = octopus.guiData.M2 * Math.PI/180;
-      octopus.ergo.S3.rotation.z = octopus.guiData.M3 * Math.PI/180;
-      octopus.ergo.S4.rotation.z = Math.PI/2.0 + octopus.guiData.M4 * Math.PI/180;
-      octopus.ergo.S5.rotation.z = octopus.guiData.M5 * Math.PI/180;
-      octopus.ergo.S6.rotation.z = octopus.guiData.M6 * Math.PI/180;
-    }
-  }
-
-  octopus.pollPos = function() {
-    // obviously really ugy for now
-    for (var i = 1; i <= 6; i++){
-      var httpRequest = new XMLHttpRequest()
-
-      httpRequest.onreadystatechange = function (data) {
-        octopus.guiData["M"+i] = data.present_position;
+    else{
+      PYPOT.stopPoll();
+      if ( octopus.ergo !== undefined ) {
+        octopus.ergo.S1.rotation.z = gui.guiData.M1 * Math.PI/180;
+        octopus.ergo.S2.rotation.z = gui.guiData.M2 * Math.PI/180;
+        octopus.ergo.S3.rotation.z = gui.guiData.M3 * Math.PI/180;
+        octopus.ergo.S4.rotation.z = gui.guiData.M4 * Math.PI/180 + Math.PI/2.0;
+        octopus.ergo.S5.rotation.z = gui.guiData.M5 * Math.PI/180;
+        octopus.ergo.S6.rotation.z = gui.guiData.M6 * Math.PI/180;
       }
-
-      var url = "http://" + octopus.guiData.remoteIP + ":" + octopus.guiData.remotePORT + "/motor/m" + i + "/register/present_position";
-      // console.log(url);
-      httpRequest.open('GET', url)
-      httpRequest.send()
     }
   }
+
 
   return octopus;
 } );

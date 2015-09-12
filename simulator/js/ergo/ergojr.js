@@ -185,5 +185,5 @@ ERGOJR.Robot.prototype = Object.create(THREE.Object3D.prototype);
 ERGOJR.Robot.prototype.constructor = ERGOJR.Robot;
 
 ERGOJR.Robot.prototype.setColor = function(color) {
-  ERGOJR.PrintedPartsMaterial.color.setHex(color);
+  ERGOJR.PrintedPartsMaterial.color.set(color);
 }
