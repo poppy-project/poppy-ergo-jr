@@ -1,3 +1,5 @@
+import time
+
 from poppy.creatures import PoppyErgoJr
 
 jr = PoppyErgoJr(simulator='threejs', use_http=True)
@@ -9,3 +11,6 @@ t.daemon = True
 t.start()
 
 jr.dance.start()
+
+while True:
+    time.sleep(1000)
