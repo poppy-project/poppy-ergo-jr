@@ -27,7 +27,7 @@ class PoppyErgoJr(AbstractPoppyCreature):
         robot.attach_primitive(TetrisPosture(robot, 2.), 'tetris_posture')
 
 
-        if hasattr(robot, 'marker_detector'):
+        if not robot.simulated and hasattr(robot, 'marker_detector'):
             robot.attach_primitive(TrackingFeedback(robot, 25.),
                                    'tracking_feedback')
             robot.tracking_feedback.start()
@@ -37,6 +37,7 @@ class PoppyErgoJr(AbstractPoppyCreature):
             m.torque_limit = 70.
             m.led = 'off'
 
-        if not robot.simulated:
-            robot.attach_primitive(FaceTracking(robot, 10, robot.face_detector),
+        if not robot.simulated and hasattr(robot, 'face_tracking'):
+            robot.attach_primitive(FaceTracking(robot, 10,
+                                   robot.face_detector),
                                    'face_tracking')
