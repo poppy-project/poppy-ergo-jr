@@ -95,12 +95,6 @@
     "marker_detector": {
       "type": "MarkerDetector",
       "cameras": ["camera"],
-      "freq": 2.0,
-      "need_robot": true
-    },
-    "face_detector": {
-      "type": "FaceDetector",
-      "cameras": ["camera"],
       "freq": 10.0,
       "need_robot": true
     }
