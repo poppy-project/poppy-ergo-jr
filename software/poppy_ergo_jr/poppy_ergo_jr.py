@@ -27,6 +27,11 @@ class PoppyErgoJr(AbstractPoppyCreature):
         robot.attach_primitive(TetrisPosture(robot, 2.), 'tetris_posture')
 
 
+        if hasattr(robot, 'marker_detector'):
+            robot.attach_primitive(TrackingFeedback(robot, 25.),
+                                   'tracking_feedback')
+            robot.tracking_feedback.start()
+
         for m in robot.motors:
             m.pid = (4, 2, 0)
             m.torque_limit = 70.
