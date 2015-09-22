@@ -5,7 +5,7 @@ from pypot.primitive.utils import SimplePosture, Sinus
 class BasePosture(SimplePosture):
     @property
     def target_position(self):
-        return dict([(m.name, 0.) for m in self.robot.motors])
+        return {m.name: 0. for m in self.robot.motors}
 
 
 class RestPosture(SimplePosture):
@@ -17,13 +17,44 @@ class RestPosture(SimplePosture):
     def target_position(self):
         return {
             'm1': 0.,
-            'm2': -65.,
-            'm3': 55.,
+            'm2': -90.,
+            'm3': 35.,
             'm4': 0.,
-            'm5': -20.,
-            'm6': 20.,
+            'm5': 55.,
+            'm6': -5.,
         }
 
+class CuriousPosture(SimplePosture):
+    @property
+    def target_position(self):
+        return {
+            'm1': 0.,
+            'm2': -15.,
+            'm3': 40.,
+            'm4': 0.,
+            'm5': -35.,
+            'm6': -60.
+        }
+
+    @property
+    def leds(self):
+        return {m: 'pink' for m in self.robot.motors}
+
+class TetrisPosture(SimplePosture):
+    @property
+    def target_position(self):
+        return {
+            'm1': 0.,
+            'm2': -90.,
+            'm3': 90.,
+            'm4': 0.,
+            'm5': -90.,
+            'm6': -90.
+        }
+
+    @property
+    def leds(self):
+        return {m: 'yellow' for m in self.robot.motors}
 
 class IdlePosture(SimplePosture):
     @property

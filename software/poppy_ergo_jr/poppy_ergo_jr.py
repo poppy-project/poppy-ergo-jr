@@ -6,8 +6,10 @@ from poppy.creatures import AbstractPoppyCreature
 from .jump import Jump
 from .dance import Dance
 from .face_tracking import FaceTracking
-from .postures import (BasePosture, RestPosture, SafePowerUp)
-
+from .tracking_feedback import TrackingFeedback
+from .postures import (BasePosture, RestPosture,
+                       CuriousPosture, TetrisPosture,
+                       SafePowerUp)
 
 class PoppyErgoJr(AbstractPoppyCreature):
     @classmethod
@@ -21,6 +23,9 @@ class PoppyErgoJr(AbstractPoppyCreature):
 
         robot.attach_primitive(BasePosture(robot, 2.), 'base_posture')
         robot.attach_primitive(RestPosture(robot, 2.), 'rest_posture')
+        robot.attach_primitive(CuriousPosture(robot, 2.), 'curious_posture')
+        robot.attach_primitive(TetrisPosture(robot, 2.), 'tetris_posture')
+
 
         for m in robot.motors:
             m.pid = (4, 2, 0)
