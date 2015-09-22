@@ -10,6 +10,10 @@ class BasePosture(SimplePosture):
 
 class RestPosture(SimplePosture):
     @property
+    def leds(self):
+        return {m: 'blue' for m in self.robot.motors}
+
+    @property
     def target_position(self):
         return {
             'm1': 0.,
@@ -33,6 +37,9 @@ class IdlePosture(SimplePosture):
             'm6': 20.0,
         }
 
+    @property
+    def leds(self):
+        return {m: 'blue' for m in self.robot.motors}
 
 class IdleBreathing(LoopPrimitive):
     def setup(self):
@@ -50,15 +57,14 @@ class IdleBreathing(LoopPrimitive):
         time.sleep(2)
         [s.start() for s in self.sinus]
 
-        # TODO: define exception for merging color in primitives
-        for m in self.robot._robot._robot.motors:
+        for m in self.robot.motors:
             m.led = 'blue'
 
     def update(self):
         pass
 
     def teardown(self):
-        for m in self.robot._robot._robot.motors:
+        for m in self.robot.motors:
             m.led = 'off'
         [s.stop() for s in self.sinus]
 

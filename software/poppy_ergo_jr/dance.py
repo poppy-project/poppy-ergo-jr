@@ -27,7 +27,7 @@ class Dance(LoopPrimitive):
         for m in self.robot.motors:
             m.moving_speed = 150.
 
-        for m in self.robot._robot.motors:
+        for m in self.robot.motors:
             m.led = 'green'
 
         [s.start() for s in self.sinus]
@@ -38,5 +38,5 @@ class Dance(LoopPrimitive):
     def teardown(self):
         [s.stop() for s in self.sinus]
 
-        for m in self.robot._robot.motors:
+        for m in self.robot.motors:
             m.led = 'off'
