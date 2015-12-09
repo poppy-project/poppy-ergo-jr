@@ -12,6 +12,6 @@ Thus the alimentation should be added between the USB2Dynamixel (that deals with
 
 Then connect the USB2Dynamixel on one end and the first motor on the other end. Connect the USB2Dynamixel to your computer or Raspberry Pi. And power the board with 7.5V.
 
-The communication with the motor is TTL, thus configure the USB2Dynamixel in TTL mode as show below.
+The communication with the motor is TTL, thus configure the USB2Dynamixel in TTL mode as shown below.
 
 ![Power Board](img/electronic/usb2dynamixel.jpg)
