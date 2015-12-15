@@ -7,7 +7,7 @@
         "base",
         "tip"
       ],
-      "port": "auto",
+      "port": "/dev/ttyAMA0",
       "syncloop": "LightDxlController"
     }
   },
