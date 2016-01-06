@@ -3,11 +3,11 @@ from functools import partial
 
 from poppy.creatures import AbstractPoppyCreature
 
-from .jump import Jump
-from .dance import Dance
-from .face_tracking import FaceTracking
-from .tracking_feedback import TrackingFeedback
-from .postures import (BasePosture, RestPosture,
+from primitives.jump import Jump
+from primitives.dance import Dance
+from primitives.face_tracking import FaceTracking
+from primitives.tracking_feedback import TrackingFeedback
+from primitives.postures import (BasePosture, RestPosture,
                        CuriousPosture, TetrisPosture,
                        SafePowerUp)
 
@@ -28,7 +28,7 @@ class PoppyErgoJr(AbstractPoppyCreature):
 
 
         if not robot.simulated and hasattr(robot, 'marker_detector'):
-            robot.attach_primitive(TrackingFeedback(robot, 25.),
+            robot.attach_primitive((robot, 25.),
                                    'tracking_feedback')
             robot.tracking_feedback.start()
 
