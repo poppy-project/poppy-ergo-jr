@@ -3,11 +3,11 @@ from functools import partial
 
 from poppy.creatures import AbstractPoppyCreature
 
-from primitives.jump import Jump
-from primitives.dance import Dance
-from primitives.face_tracking import FaceTracking
-from primitives.tracking_feedback import TrackingFeedback
-from primitives.postures import (BasePosture, RestPosture,
+from .primitives.jump import Jump
+from .primitives.dance import Dance
+from .primitives.face_tracking import FaceTracking
+from .primitives.tracking_feedback import TrackingFeedback
+from .primitives.postures import (BasePosture, RestPosture,
                                  CuriousPosture, TetrisPosture,
                                  SafePowerUp)
 
