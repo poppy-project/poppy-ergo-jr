@@ -32,7 +32,7 @@ class HeadFollow(LoopPrimitive):
         if c is not None:
             x, y = c
 
-            self.robot.m1.goal_position = self.rest_pos['m1'] -x * self.dx
+            self.robot.m1.goal_position = self.rest_pos['m1'] - x * self.dx
             self.robot.m2.goal_position = self.rest_pos['m2'] + y * self.dy
 
     def teardown(self):
