@@ -8,8 +8,8 @@ from .primitives.dance import Dance
 from .primitives.face_tracking import FaceTracking
 from .primitives.tracking_feedback import TrackingFeedback
 from .primitives.postures import (BasePosture, RestPosture,
-                                 CuriousPosture, TetrisPosture,
-                                 SafePowerUp)
+                                  CuriousPosture, TetrisPosture,
+                                  SafePowerUp)
 
 
 class PoppyErgoJr(AbstractPoppyCreature):
