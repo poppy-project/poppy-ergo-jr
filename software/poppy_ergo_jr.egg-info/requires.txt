@@ -1,0 +1,2 @@
+pypot >= 2.8
+poppy-creature
