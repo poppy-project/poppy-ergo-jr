@@ -2,6 +2,7 @@ from numpy import sum
 from functools import partial
 
 from poppy.creatures import AbstractPoppyCreature
+from poppy.creatures.ik import IKChain
 
 from .primitives.jump import Jump
 from .primitives.dance import Dance
@@ -17,6 +18,13 @@ class PoppyErgoJr(AbstractPoppyCreature):
     @classmethod
     def setup(cls, robot):
         robot._primitive_manager._filter = partial(sum, axis=0)
+
+        c = IKChain.from_poppy_creature(robot,
+                                                                    motors=robot.motors,
+                                                                    passiv=None,
+                                                                    tip=[0, 0, 0])
+
+        robot.chain = c
 
         robot.attach_primitive(SafePowerUp(robot), 'safe_power_up')
 

@@ -1,2 +1,3 @@
 include configuration/*.json
 include vrep-scene/*.ttt
+include poppy_torso/poppy_ergo_jr.urdf
