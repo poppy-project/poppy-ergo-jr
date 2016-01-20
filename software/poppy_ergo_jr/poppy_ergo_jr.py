@@ -20,9 +20,9 @@ class PoppyErgoJr(AbstractPoppyCreature):
         robot._primitive_manager._filter = partial(sum, axis=0)
 
         c = IKChain.from_poppy_creature(robot,
-                                                                    motors=robot.motors,
-                                                                    passiv=None,
-                                                                    tip=[0, 0, 0])
+                                        motors=robot.motors,
+                                        passiv=[],
+                                        tip=[0, 0, -0.07])
 
         robot.chain = c
 
