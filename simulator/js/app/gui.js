@@ -37,7 +37,7 @@ define( ["dat"], function( dat ) {
   gui.controller.remote.add( gui.guiData, "remoteStatus").name("Enable");
   gui.controller.remoteIP = gui.controller.remote.add( gui.guiData, "remoteIP").name("IP");
   gui.controller.remotePORT = gui.controller.remote.add( gui.guiData, "remotePORT").name("PORT");
-  gui.controller.remoteFrequency = gui.controller.remote.add( gui.guiData, "remoteFrequency", 1, 50, 1).name("Frequency");
+  gui.controller.remoteFrequency = gui.controller.remote.add( gui.guiData, "remoteFrequency", 1, 25, 1).name("Frequency");
 
   return gui;
 
