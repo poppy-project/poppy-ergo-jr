@@ -1,4 +1,3 @@
-
 var OLLO = {};
 
 // Diameter of the body of Ollo Rivet

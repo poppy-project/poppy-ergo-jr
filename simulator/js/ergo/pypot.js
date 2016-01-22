@@ -1,54 +1,67 @@
+define([ 'gui' ], function(gui) {
 
-var PYPOT = {};
+  var defaultMotors = [ 'm1', 'm2', 'm3', 'm4', 'm5', 'm6' ];
 
-PYPOT.IP = "127.0.0.1";
-PYPOT.PORT = "8080";
-PYPOT.FREQ = 50;
+  var PYPOT = {
+    IP: '127.0.0.1',
+    PORT: '8080',
+    FREQ: 20,
+    motors: {},
+    pollRequest: undefined,
+    motorIds: defaultMotors,
+    poller: undefined,
+    motors: (function(_motors) {
+      var ret = {};
+      _motors.forEach(function(motorId) {
+        ret[motorId] = 0;
+      });
 
-PYPOT.motors = {};
-PYPOT.requests = {};
+      return ret;
+    })(defaultMotors)
+  };
 
-PYPOT.motorIDs = ["M1", "M2", "M3", "M4", "M5", "M6"];
-PYPOT.motorIDs.forEach(function(motorID) {
-
-  PYPOT.motors[motorID] = 0;
-
-  PYPOT.requests[motorID] = new XMLHttpRequest();
-
-  PYPOT.requests[motorID].onreadystatechange = function () {
-    if (PYPOT.requests[motorID].readyState == 4) {
-       if(PYPOT.requests[motorID].status == 200){
-         var data = JSON.parse(PYPOT.requests[motorID].responseText);
-         PYPOT.motors[motorID] = data.present_position;
-      } else {
-        console.log("Something wrong while reading REST API for " + motorID);
-      }
+  PYPOT.startPoll = function() {
+    if (!PYPOT.poller) {
+      console.log('init polling');
+      PYPOT.poller = setInterval(PYPOT.pollPos, 1000 / PYPOT.FREQ);
     }
   }
-});
 
-PYPOT.poller = undefined;
-
-PYPOT.startPoll = function() {
-  if (!PYPOT.poller){
-    console.log("init polling");
-    PYPOT.poller = setInterval(function(){ PYPOT.pollPos() } ,1000.0/PYPOT.FREQ);
-  }
-}
-
-PYPOT.stopPoll = function() {
-    if (PYPOT.poller){
+  PYPOT.stopPoll = function() {
+    if (PYPOT.poller) {
       clearInterval(PYPOT.poller);
       PYPOT.poller = undefined;
     }
-}
-
-PYPOT.pollPos = function() {
-  for (var i = 1; i<= 6; i++) {
-
-    var url = "http://" + PYPOT.IP + ":" + PYPOT.PORT + "/motor/m" + i + "/register/present_position";
-
-    PYPOT.requests[PYPOT.motorIDs[i-1]].open('GET', url);
-    PYPOT.requests[PYPOT.motorIDs[i-1]].send();
   }
-}
+
+  PYPOT.pollPos = function() {
+    var req, pollUrl;
+
+    pollUrl = 'http://' + PYPOT.IP + ':' + PYPOT.PORT + '/motors/register/present_position';
+    PYPOT.pollRequest = new XMLHttpRequest();
+    req = PYPOT.pollRequest;
+
+    req.onreadystatechange = function() {
+      var res;
+
+      if (req.readyState === 4) {
+        if (req.status === 200) {
+          res = JSON.parse(req.responseText);
+          for (var motorId in res) {
+            PYPOT.motors[motorId] = res[motorId].present_position;
+            gui.guiData[motorId] = res[motorId].present_position;
+          }
+        } else {
+          console.log('Something wrong while reading REST API (code: ' + req.status + ')');
+        }
+      }
+    }
+
+    req.open('GET', pollUrl);
+    req.send();
+  }
+
+  window.PYPOT = PYPOT;
+
+  return PYPOT;
+});
