@@ -18,7 +18,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+/lib/
 lib64/
 parts/
 sdist/
@@ -29,7 +29,7 @@ var/
 # Sphinx
 doc/_build
 
-# OS generated files 
+# OS generated files
 .DS_Store
 .DS_Store?
 .Trashes
@@ -45,4 +45,3 @@ Thumbs.db
 
 # Pypot record files
 *.record
-

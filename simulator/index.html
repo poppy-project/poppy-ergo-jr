@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <title>Poppy Ergo Jr - Viewer</title>
+  <style media="screen">
+    html, body {
+      width: 100vw;
+      height: 100vh;
+
+      margin: 0;
+      padding: 0;
+
+      overflow-x: hidden;
+    }
+
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+
+    canvas { display: block; }
+  </style>
   <script src="js/config.js"></script>
   <script data-main="../main" src="js/require.js"></script>
-  <style media="screen">
-    html, body { margin: 0; }
-    canvas { width: 100%; height: 100%; }
-  </style>
 </head>
 <body>
   <div id="container"></div>

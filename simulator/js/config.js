@@ -17,7 +17,7 @@ var require = {
     'coordinates': {exports: 'Coordinates'},
     'detector': { exports: 'Detector' },
     'stats': { exports: 'Stats' },
-    'dat': {exports: 'dat'},
+    'dat': {exports: 'dat'}
   },
   // Third party code lives in js/lib
   paths: {
@@ -36,6 +36,6 @@ var require = {
     coordinates: '../lib/Coordinates',
     detector: '../lib/Detector',
     stats: '../lib/stats.min',
-    dat: '../lib/dat.gui.min',
+    dat: '../lib/dat.gui.min'
   }
 };
