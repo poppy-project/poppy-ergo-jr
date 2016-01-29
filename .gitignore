@@ -1,4 +1,3 @@
-# grizou
 hardware/parts/stl
 
 # Byte-compiled / optimized / DLL files
@@ -29,7 +28,7 @@ var/
 # Sphinx
 doc/_build
 
-# OS generated files 
+# OS generated files
 .DS_Store
 .DS_Store?
 .Trashes
@@ -45,4 +44,3 @@ Thumbs.db
 
 # Pypot record files
 *.record
-
