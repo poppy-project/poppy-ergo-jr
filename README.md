@@ -14,6 +14,6 @@
 
 ## [Suppliers »](doc/suppliers.md)
 
-## Credit
+## Credits
 
 The beginning of this project was inspired from the project https://github.com/RobotsWar/Spidey. The code has changed a lot but we took great inspiration of their approach with OpenScad.
