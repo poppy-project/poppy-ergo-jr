@@ -14,7 +14,6 @@ from .primitives.postures import (BasePosture, RestPosture,
 
 
 class PoppyErgoJr(AbstractPoppyCreature):
-
     @classmethod
     def setup(cls, robot):
         robot._primitive_manager._filter = partial(sum, axis=0)

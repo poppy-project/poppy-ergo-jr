@@ -1,7 +1,6 @@
-import time
-
 from pypot.primitive import LoopPrimitive
 from pypot.primitive.utils import Sinus
+
 
 class Dance(LoopPrimitive):
     def __init__(self, robot):
