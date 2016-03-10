@@ -9,21 +9,17 @@ It comes with three tools:
 * a graspper
 * a pen holder
 
+The Ergo Poppy Jr is ideal to start manipulating robots and learn robotic without difficulties.
+
+It is particularly well suited for educational purposes (cheap, simple to assemble, and easily controllable) or can be a very nice desk decoration for geeks and makers...
+
+You can get all the parts yourself following the [bill of materials (BOM)](doc/bom.md) and printing the [3D files](https://github.com/poppy-project/poppy-ergo-jr/releases/) available in the STL format.
 
 ## Quick information
 Documentation about Poppy Ergo Jr as every projects of the Poppy platform is located at [docs.poppy-project.org](http://docs.poppy-project.org/en/).
-* [Assembly guide](http://docs.poppy-project.org/en/assembly-guides/ergo-jr.html)
-* [Samples]
-
-## Quick information
-
-Watch this [video](https://youtu.be/B3CZs55AJQo)
-
-Look at the [doc folder](doc) for building instructions and help
-
-Look at the [hardware folder](hardware) for the mechanical parts
-
-Look at the [software folder](software) for code examples
+* Look at the [assembly guide](http://docs.poppy-project.org/en/assembly-guides/ergo-jr.html) for building.
+* Look at [code samples](https://github.com/poppy-project/poppy-ergo-jr/tree/master/software/samples) for ideas
+* Look at the [hardware folder](hardware) for the mechanical parts
 
 
 ### Contributing
@@ -33,7 +29,12 @@ You can share your experience, new design, ideas or questions on the [Poppy proj
 To contribute to this repository, you can [fork it](https://help.github.com/articles/fork-a-repo/) and issue a [pull request](https://help.github.com/articles/using-pull-requests/). [[Another useful link]](https://gun.io/blog/how-to-github-fork-branch-and-pull-request/)
 
 ### Pictures
-[![Jumping ergoJr](doc/img/poppy_ergo_jr.jpg)](https://vine.co/v/OxlTF6inWpV)
+
+Look at the Poppy Ergo [jump](https://vine.co/v/OxlTF6inWpV) !
+
+Quick tour of availables tools:
+![](http://docs.poppy-project.org/en/img/ergo-jr/3D/multitool.gif)
+
 
 
 ### License
