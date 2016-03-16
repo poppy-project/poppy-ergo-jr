@@ -18,9 +18,7 @@ setup(name='poppy-ergo-jr',
       version=version(),
       packages=find_packages(),
 
-      install_requires=['pypot >= 2.8', 'poppy-creature'],
-
-      setup_requires=['setuptools_git >= 0.3', ],
+      install_requires=['pypot >= 2.11', 'poppy-creature >= 1.8'],
 
       include_package_data=True,
       exclude_package_data={'': ['README', '.gitignore']},
