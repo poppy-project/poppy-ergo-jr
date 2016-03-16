@@ -29,7 +29,7 @@ setup(name='poppy-ergo-jr',
 
       author='Pierre Rouanet, Jonathan Grizou, Matthieu Lapeyre',
       author_email='pierre.rouanet@gmail.com',
-      description=' Poppy Ergo Jr Software Library',
+      description='Poppy Ergo Jr Software Library',
       url='https://github.com/poppy-project/poppy-ergo-jr',
       license='GNU GENERAL PUBLIC LICENSE Version 3',
 
