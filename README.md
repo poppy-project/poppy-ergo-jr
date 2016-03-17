@@ -1,4 +1,5 @@
 # Poppy Ergo Jr
+[![PyPI](https://img.shields.io/pypi/v/poppy-ergo-jr.svg)](https://pypi.python.org/pypi/poppy-ergo-jr/)
 
 Poppy Ergo Jr robot is a small and low cost 6-degree-of-freedom robot arm. It consists of very simple shapes which can be easily 3D printed.
 
