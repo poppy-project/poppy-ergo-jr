@@ -34,7 +34,7 @@ To contribute to this repository, you can [fork it](https://help.github.com/arti
 Look at the Poppy Ergo [jump](https://vine.co/v/OxlTF6inWpV) !
 
 Quick tour of availables tools:
-![](http://docs.poppy-project.org/en/img/ergo-jr/3D/multitool.gif)
+![](doc/img/ergo_tools.gif)
 
 
 
