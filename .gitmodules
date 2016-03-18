@@ -1,15 +1,3 @@
-[submodule "hardware/openscad/MCAD"]
-	path = hardware/openscad/MCAD
-	url = https://github.com/jgrizou/MCAD.git
-[submodule "hardware/openscad/segment-scad"]
-	path = hardware/openscad/segment-scad
-	url = https://github.com/jgrizou/segment-scad.git
-[submodule "hardware/openscad/robotis-scad"]
-	path = hardware/openscad/robotis-scad
-	url = https://github.com/jgrizou/robotis-scad.git
-[submodule "hardware/openscad/raspberry-scad"]
-	path = hardware/openscad/raspberry-scad
-	url = https://github.com/jgrizou/raspberry-scad.git
-[submodule "hardware/openscad/lego-scad"]
-	path = hardware/openscad/lego-scad
-	url = https://github.com/jgrizou/lego-scad.git
+[submodule "hardware/pixl_board"]
+	path = hardware/pixl_board
+	url = https://github.com/poppy-project/pixl.git
