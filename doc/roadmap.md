@@ -16,4 +16,3 @@ The next milestones for this project
 * [x] Create a pen holder
 * [x] Create a base for thymio
 * [x] Raspberry Pi 2B base:
-- http://www.thingiverse.com/thing:429317
