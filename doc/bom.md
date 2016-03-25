@@ -1,6 +1,6 @@
-# BOM
+# Bill of materials
 
-Here you will find the complete list of material needed to build a Poppy Ergo Jr.
+Here you will find the complete list of material (BOM) needed to build a Poppy Ergo Jr.
 
 ## Poppy's material
 - 1x [Pixl board](https://github.com/poppy-project/pixl) *(electronic board to control XL320 motors)*
