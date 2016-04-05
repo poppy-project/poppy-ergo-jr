@@ -17,6 +17,9 @@ requirements:
     - setuptools
     - pypot >2.11
     - poppy-creature >=1.8
+    - tornado
+    - bottle
+
 
   run:
     - python
@@ -24,6 +27,8 @@ requirements:
     - poppy-creature >=1.8
     - opencv3
     - hampy
+    - tornado
+    - bottle
 
 test:
 
