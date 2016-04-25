@@ -4,7 +4,7 @@ Here you will find the complete list of material (BOM) needed to build a Poppy E
 
 ## Poppy's material
 - 1x [Pixl board](https://github.com/poppy-project/pixl) *(electronic board to control XL320 motors)*
-- 1x [disk_support.stl](https://github.com/poppy-project/poppy-ergo-jr/blob/master/hardware/STL/disk_support.stl) (using laser cutting) the 2D plan can be found [here](https://github.com/poppy-project/poppy-ergo-jr/tree/PR_release_hardware/hardware/laser_cutting). *You can also 3D print the base but it will take a lot of time*
+- 1x [disk_support.stl](https://github.com/poppy-project/poppy-ergo-jr/blob/master/hardware/STL/disk_support.stl) (using laser cutting) the 2D plan can be found [here](https://github.com/poppy-project/poppy-ergo-jr/tree/master/hardware/laser_cutting). *You can also 3D print the base but it will take a lot of time*
 - the 3D printed parts [STL here](https://github.com/poppy-project/poppy-ergo-jr/tree/master/hardware/STL)
   - 1x [base.stl](https://github.com/poppy-project/poppy-ergo-jr/blob/master/hardware/STL/base.stl)
   - 3x [horn2horn.stl](https://github.com/poppy-project/poppy-ergo-jr/blob/master/hardware/STL/horn2horn.stl)
