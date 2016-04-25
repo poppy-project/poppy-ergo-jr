@@ -41,7 +41,7 @@ You can also use our setup script directly on a Raspberry-Pi based on Raspbian. 
 It a two steps process:
 
 * Make sure you have enough space on the SD-card (at least 2G). You can extand your partition if needed via:
-```sudo raspi-config --expand-rootfs```
+```sudo raspi-config --expand-rootfs``` You will need to reboot afterwards.
 * Run the raspoppy script: ```curl -L https://raw.githubusercontent.com/poppy-project/raspoppy/master/raspoppyfication.sh | bash -s "poppy-ergo-jr"```
 
 ## Contributing
