@@ -62,6 +62,7 @@ This project is initially a fundamental research project financed by [ERC Grant 
 - [Forum](https://forum.poppy-project.org)
 - [Youtube](https://www.youtube.com/channel/UC3iVGSr-vMgnFlIfPBH2p7Q)
 - [Twitter](https://twitter.com/poppy_project)
+- [Facebook](https://www.facebook.com/poppycommunity/)
 - [Flickr](https://www.flickr.com/photos/poppy-project)
 - [Vimeo](https://vimeo.com/poppyproject)
 - [Thingiverse](http://www.thingiverse.com/poppy_project/)
