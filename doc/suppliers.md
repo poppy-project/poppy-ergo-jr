@@ -1,5 +1,9 @@
 # List of suppliers
 
+##complete kit
+
+Complete kits with or without 3d printed parts are available on [Generation Robot](http://www.generationrobots.com/en/328-poppy-ergo-jr-robot)
+
 ## 3D printed parts
 
 If you do not have a 3D printer you can use online service such as [3D Hubs](https://www.3dhubs.com/), [Sculpteo](http://www.sculpteo.com/), [i.materialise](https://i.materialise.com/), [shapeways](http://www.shapeways.com/), ...

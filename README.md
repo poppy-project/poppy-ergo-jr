@@ -23,12 +23,12 @@ Documentation about Poppy Ergo Jr as every projects of the Poppy platform is loc
 
 ## Build your own Poppy Ergo Jr
 
-* You can find the complete **Bill Of Material** needed to build a Poppy Ergo Jr [here](doc/bom.md) and a list of potential suppliers [here](doc/suppliers.md).
+* You can find the complete list of material needed on the  **[Bill Of Material](doc/bom.md)**, and a [list of suppliers](doc/suppliers.md).
 ![](doc/img/assembly/steps/ErgoJr_assembly.gif)
 
 * Look at the [hardware folder](hardware) for the mechanical and electronics parts.
 
-* Then you can follow the assembly instructions presented [here](doc/assembly.md) to guide you trough the process of transforming a bunch of parts in a magnificent robot !
+* Then you can follow the assembly instructions presented [on the global poppy project documentation](http://docs.poppy-project.org/en/assembly-guides/ergo-jr/index.html) to guide you trough the process of transforming a bunch of parts in a magnificent robot !
 
 * Once you have a ready-to-use Poppy Ergo, you can take a look at [code samples](https://github.com/poppy-project/poppy-ergo-jr/tree/master/software/samples) for ideas
 
@@ -75,6 +75,7 @@ This project is initially a fundamental research project financed by [ERC Grant 
 - [Forum](https://forum.poppy-project.org)
 - [Youtube](https://www.youtube.com/channel/UC3iVGSr-vMgnFlIfPBH2p7Q)
 - [Twitter](https://twitter.com/poppy_project)
+- [Facebook](https://www.facebook.com/poppycommunity/)
 - [Flickr](https://www.flickr.com/photos/poppy-project)
 - [Vimeo](https://vimeo.com/poppyproject)
 - [Thingiverse](http://www.thingiverse.com/poppy_project/)
