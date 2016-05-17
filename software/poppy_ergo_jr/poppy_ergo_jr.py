@@ -4,7 +4,6 @@ from functools import partial
 from poppy.creatures import AbstractPoppyCreature
 from poppy.creatures.ik import IKChain
 
-from .primitives.jump import Jump
 from .primitives.dance import Dance
 from .primitives.face_tracking import FaceTracking
 from .primitives.tracking_feedback import TrackingFeedback
@@ -28,7 +27,6 @@ class PoppyErgoJr(AbstractPoppyCreature):
         robot.attach_primitive(SafePowerUp(robot), 'safe_power_up')
 
         robot.attach_primitive(Dance(robot), 'dance')
-        robot.attach_primitive(Jump(robot), 'jump')
 
         robot.attach_primitive(BasePosture(robot, 2.), 'base_posture')
         robot.attach_primitive(RestPosture(robot, 2.), 'rest_posture')
