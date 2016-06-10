@@ -11,7 +11,7 @@ from .primitives.postures import (BasePosture, RestPosture,
                                   CuriousPosture, TetrisPosture,
                                   SafePowerUp)
 
-from .primitives.ball_color_detection import get_ball_color
+from .primitives.ball_color_detection import ColorBallDetection
 
 
 class PoppyErgoJr(AbstractPoppyCreature):
@@ -49,4 +49,5 @@ class PoppyErgoJr(AbstractPoppyCreature):
                                                 robot.face_detector),
                                    'face_tracking')
 
-        robot.get_ball_color = lambda: get_ball_color(robot)
+        robot.attach_primitive(ColorBallDetection(robot),
+                               'color_ball_detection')
