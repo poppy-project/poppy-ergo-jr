@@ -23,7 +23,7 @@ def get_ball_color(ergo_jr):
     dist = {c: numpy.linalg.norm(color - d)
             for c, d in colors.items()}
 
-    color = min(dist, key=dist.key)
+    color = min(dist, key=dist.get)
     confidence = dist[color]
 
     if confidence > 30:
