@@ -9,7 +9,7 @@ from .primitives.postures import (BasePosture, RestPosture,
                                   CuriousPosture, TetrisPosture,
                                   SafePowerUp)
 
-from .primitives.ball_color_detection import (ColoredBallDetection,
+from .primitives.ball_color_detection import (ColorBallDetection,
                                               ColoredBallsDetection)
 
 
@@ -35,5 +35,5 @@ class PoppyErgoJr(AbstractPoppyCreature):
         robot.attach_primitive(ColoredBallsDetection(robot, 2),
                                'colored_balls_detection')
 
-        robot.attach_primitive(ColoredBallDetection(robot),
-                               'colored_ball_detection')
+        robot.attach_primitive(ColorBallDetection(robot),
+                               'color_ball_detection')
