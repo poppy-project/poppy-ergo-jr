@@ -31,8 +31,8 @@ class ColorBallDetection(Primitive):
 
         return max(score, key=score.get)
     
-    def get_centroid(self, color=None, threshold=3000):
-        img = self.robot.camera.frame
+    def get_centroid(color=None, threshold=3000):
+        img = jr.camera.frame
         score = {}
         masks = {}
         if color is not None:
@@ -42,14 +42,14 @@ class ColorBallDetection(Primitive):
                 masks[_color] = cv2.inRange(img, lower, upper)
                 masks[_color] = cv2.erode(masks[_color], None, iterations=4)
                 score[_color] = masks[_color].sum()
-            mask = masks[max(score, key=score.get)]
-
-        if sum(mask) < threshold:
+                color = max(score, key=score.get)
+            mask = masks[color]
+        if score[color] < threshold:
             return "0;0"
         else:
             moments = cv2.moments(mask, True)
             cx = moments['m10'] / moments['m00']
-            cy = moments['m01'] / moments['m00']
+            cy = moments['m01'] / moments['m00'] 
             return "%s;%s" % (cx * 100 / img.shape[1], cy * 100 / img.shape[0])
 
 
