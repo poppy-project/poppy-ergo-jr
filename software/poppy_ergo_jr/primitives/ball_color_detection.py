@@ -37,7 +37,7 @@ class ColoredBallsDetection(LoopPrimitive):
         params = cv2.SimpleBlobDetector_Params()
 
         params.filterByArea = True
-        params.minArea = 300
+        params.minArea = 5000
         params.maxArea = 50000
 
         params.filterByCircularity = True
