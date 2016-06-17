@@ -57,7 +57,7 @@ class ColoredBallsDetection(LoopPrimitive):
         self.last_detection = []
         self.best_detection = []
         self.last_timestamp = 0
-        self.history = 3  # in sec.
+        self.history = 30  # in sec.
 
         self.led_motors = [self.robot.m2, self.robot.m3, self.robot.m4]
 
@@ -79,8 +79,8 @@ class ColoredBallsDetection(LoopPrimitive):
             self.best_detection = colors
 
         if time.time() - self.last_timestamp > self.history:
-            for m in self.led_motors:
-                m.led = 'off'
+            # for m in self.led_motors:
+            #     m.led = 'off'
             self.best_detection = []
 
     def detect_balls(self, img):
