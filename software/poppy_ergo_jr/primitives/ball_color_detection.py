@@ -67,9 +67,10 @@ class ColoredBallsDetection(LoopPrimitive):
 
         if colors:
             self.last_timestamp = time.time()
-            for c, m in zip(colors + ['off'] * (3 - len(colors)),
-                            self.led_motors):
-                m.led = c
+
+        for c, m in zip(colors + ['off'] * (3 - len(colors)),
+                        self.led_motors):
+            m.led = c
 
         self.last_detection = colors
 
