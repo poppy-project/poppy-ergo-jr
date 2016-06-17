@@ -31,7 +31,7 @@ class ColorBallDetection(Primitive):
 
         return max(score, key=score.get)
     
-      def get_centroid(self, color=None, threshold=3000):
+    def get_centroid(self, color=None, threshold=3000):
         img = self.robot.camera.frame
         score = {}
         masks = {}
