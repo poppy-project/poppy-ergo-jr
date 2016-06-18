@@ -79,7 +79,7 @@ class ColoredBallsDetection(LoopPrimitive):
         self.last_detection = []
         self.best_detection = []
         self.last_timestamp = 0
-        self.history = 30  # in sec.
+        self.history = 15  # in sec.
 
         self.led_motors = [self.robot.m2, self.robot.m3, self.robot.m4]
 
