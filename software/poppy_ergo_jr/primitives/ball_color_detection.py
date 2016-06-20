@@ -10,6 +10,8 @@ rgb_ranges = {
     'red': ((0, 0, 90), (100, 100, 255)),
 }
 
+hsv_min, hsv_max = ((0, 75, 75), (255, 255, 255))
+
 
 class ColorBallDetection(Primitive):
     def crop(self, image):
@@ -103,6 +105,11 @@ class ColoredBallsDetection(LoopPrimitive):
 
     def detect_balls(self, img):
         balls = {}
+
+        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+        hsv_mask = cv2.inRange(hsv, hsv_min, hsv_max)
+
+        img[hsv_mask < 255] = (0, 0, 0)
 
         for color, (lower, upper) in rgb_ranges.items():
             mask = cv2.inRange(img, lower, upper)
