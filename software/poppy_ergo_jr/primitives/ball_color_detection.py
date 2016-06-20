@@ -10,6 +10,12 @@ rgb_ranges = {
     'red': ((0, 0, 90), (100, 100, 255)),
 }
 
+better_rgb_ranges = {
+    'blue': ((50, 0, 0), (255, 75, 25)),
+    'green': ((0, 100, 0), (100, 255, 100)),
+    'red': ((0, 0, 50), (50, 50, 255)),
+}
+
 hsv_min, hsv_max = ((0, 75, 75), (255, 255, 255))
 
 
@@ -106,12 +112,12 @@ class ColoredBallsDetection(LoopPrimitive):
     def detect_balls(self, img):
         balls = {}
 
-        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-        hsv_mask = cv2.inRange(hsv, hsv_min, hsv_max)
+        # hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+        # hsv_mask = cv2.inRange(hsv, hsv_min, hsv_max)
+        #
+        # img[hsv_mask < 255] = (0, 0, 0)
 
-        img[hsv_mask < 255] = (0, 0, 0)
-
-        for color, (lower, upper) in rgb_ranges.items():
+        for color, (lower, upper) in better_rgb_ranges.items():
             mask = cv2.inRange(img, lower, upper)
             mask = cv2.dilate(mask, None, iterations=2)
             mask = cv2.erode(mask, None, iterations=5)
