@@ -13,7 +13,7 @@ rgb_ranges = {
 
 class ColorBallDetection(Primitive):
     def crop(self, image):
-        return image  # [100:300, 250:450]
+        return image
 
     def mean_color(self, image):
         return image.mean(axis=(0, 1))
@@ -51,7 +51,6 @@ class ColorBallDetection(Primitive):
             cx = moments['m10'] / moments['m00']
             cy = moments['m01'] / moments['m00']
             return "%s;%s" % (cx * 100 / img.shape[1], cy * 100 / img.shape[0])
-
 
 
 class ColoredBallsDetection(LoopPrimitive):
@@ -97,13 +96,9 @@ class ColoredBallsDetection(LoopPrimitive):
         self.last_detection = colors
 
         if len(colors) >= len(self.best_detection):
-            # for c, m in zip(colors, self.led_motors):
-            #     m.led = c
             self.best_detection = colors
 
         if time.time() - self.last_timestamp > self.history:
-            # for m in self.led_motors:
-            #     m.led = 'off'
             self.best_detection = []
 
     def detect_balls(self, img):
