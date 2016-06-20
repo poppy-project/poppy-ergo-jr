@@ -44,7 +44,7 @@ class ColorBallDetection(Primitive):
                 masks[_color] = cv2.inRange(img, lower, upper)
                 masks[_color] = cv2.erode(masks[_color], None, iterations=4)
                 score[_color] = masks[_color].sum()
-                color = max(score, key=score.get)
+            color = max(score, key=score.get)
             mask = masks[color]
         if score[color] < threshold:
             return "0;0"
