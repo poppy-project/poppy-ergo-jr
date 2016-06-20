@@ -72,7 +72,7 @@ class ColorBallDetection(LoopPrimitive):
             moments = cv2.moments(mask, True)
             cx = moments['m10'] / moments['m00']
             cy = moments['m01'] / moments['m00']
-            return "%s;%s" % (cx * 100 / img.shape[1], cy * 100 / img.shape[0])
+            return "%s;%s;%s" % (cx * 100 / img.shape[1], cy * 100 / img.shape[0], color)
 
 class ColoredBallsDetection(LoopPrimitive):
     def setup(self):
