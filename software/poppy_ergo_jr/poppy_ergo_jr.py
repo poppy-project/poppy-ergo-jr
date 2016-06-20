@@ -35,5 +35,5 @@ class PoppyErgoJr(AbstractPoppyCreature):
         robot.attach_primitive(ColoredBallsDetection(robot, 2),
                                'colored_balls_detection')
 
-        robot.attach_primitive(ColorBallDetection(robot),
+        robot.attach_primitive(ColorBallDetection(robot, 3)
                                'color_ball_detection')
