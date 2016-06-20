@@ -13,35 +13,55 @@ rgb_ranges = {
 hsv_min, hsv_max = ((0, 75, 75), (255, 255, 255))
 
 
-class ColorBallDetection(Primitive):
+class ColorBallDetection(LoopPrimitive):
+    
+    
     def crop(self, image):
-        return image
+        return image  # [100:300, 250:450]
 
     def mean_color(self, image):
         return image.mean(axis=(0, 1))
 
     def get_color(self):
         img = self.robot.camera.frame
+        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+        hsv_mask = cv2.inRange(hsv, hsv_min, hsv_max)
 
         score = {}
 
         for color, (lower, upper) in rgb_ranges.items():
             mask = cv2.inRange(img, lower, upper)
+            mask[hsv_mask < 255] = 0
             mask = cv2.erode(mask, None, iterations=4)
 
             score[color] = mask.sum()
 
         return max(score, key=score.get)
+    
+    def update(self):
+        self.__centroid = self._get_centroid()
 
-    def get_centroid(self, color=None, threshold=3000):
+    def get_centroid(self):
+        return self.__centroid
+
+    def _get_centroid(self, color=None, threshold=4000):
         img = self.robot.camera.frame
+        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+        hsv_mask = cv2.inRange(hsv, hsv_min, hsv_max)
+
         score = {}
         masks = {}
         if color is not None:
             mask = cv2.inRange(img, rgb_ranges[color][0], rgb_ranges[color][1])
+            mask[hsv_mask < 255] = 0
+            mask = cv2.erode(mask, None, iterations=4)
+
         else:
             for _color, (lower, upper) in rgb_ranges.items():
-                masks[_color] = cv2.inRange(img, lower, upper)
+                rgb_mask = cv2.inRange(img, lower, upper)
+                tmp_mask = rgb_mask.copy()
+                tmp_mask[hsv_mask < 255] = 0
+                masks[_color] = tmp_mask
                 masks[_color] = cv2.erode(masks[_color], None, iterations=4)
                 score[_color] = masks[_color].sum()
             color = max(score, key=score.get)
@@ -53,7 +73,6 @@ class ColorBallDetection(Primitive):
             cx = moments['m10'] / moments['m00']
             cy = moments['m01'] / moments['m00']
             return "%s;%s" % (cx * 100 / img.shape[1], cy * 100 / img.shape[0])
-
 
 class ColoredBallsDetection(LoopPrimitive):
     def setup(self):
