@@ -22,9 +22,10 @@ class PoppyErgoJr(AbstractPoppyCreature):
         c = IKChain.from_poppy_creature(robot,
                                         motors=robot.motors,
                                         passiv=[],
-                                        tip=[0, 0, -0.07])
+                                        tip=[0, 0, -0.07],
+                                        name="chain")
 
-        robot.chain = c
+        c.register(robot)
 
         robot.attach_primitive(SafePowerUp(robot), 'safe_power_up')
 
