@@ -1,8 +1,8 @@
 from numpy import sum
 from functools import partial
 
-from poppy.creatures import AbstractPoppyCreature
-from poppy.creatures.ik import IKChain
+from pypot.creatures import AbstractPoppyCreature
+from pypot.creatures.ik import IKChain
 
 from .primitives.dance import Dance
 from .primitives.face_tracking import FaceTracking
