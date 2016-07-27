@@ -5,7 +5,6 @@ import sys
 
 from setuptools import setup, find_packages
 
-
 def version():
     with open('poppy_ergo_jr/_version.py') as f:
         return re.search(r"^__version__ = ['\"]([^'\"]*)['\"]", f.read()).group(1)
@@ -14,11 +13,21 @@ extra = {}
 if sys.version_info >= (3,):
     extra['use_2to3'] = True
 
+
+extra_packages = []
+
+try:
+    import poppy.creatures
+
+    extra_packages.append('poppy-creature>=1.9')
+except ImportError:
+    pass
+
 setup(name='poppy-ergo-jr',
       version=version(),
       packages=find_packages(),
 
-      install_requires=['pypot >= 3.0.0a', 'hampy'],
+      install_requires=['pypot >= 3.0.0a', 'hampy'] + extra_packages,
 
       include_package_data=True,
       exclude_package_data={'': ['README', '.gitignore']},
