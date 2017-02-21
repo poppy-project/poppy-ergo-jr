@@ -34,7 +34,7 @@ Documentation about Poppy Ergo Jr as every projects of the Poppy platform is loc
 
 ## Setup your Raspberry-Pi board
 
-Poppy Ergo-Jr is based on the [Raspberry-Pi 2 board](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/). We provide our own [image](https://github.com/poppy-project/poppy-ergo-jr/releases/download/1.0.0-gm/2016-09-30-poppy-ergo-jr.img.zip) (based on Raspbian) that can be directly copied to the SD-card. You can refer to the [documentation](http://docs.poppy-project.org/en/installation/burn-an-image-file.html) for more details. *Note that if you buy it as a kit from one of the reseller you will also get a pre-installed SD-card.*
+Poppy Ergo-Jr is based on the [Raspberry-Pi 2 board](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/). We provide our own [image](https://github.com/poppy-project/poppy-ergo-jr/releases/download/1.0.0-gm/2017-02-21-poppy-ergo-jr.img.zip) (based on Raspbian) that can be directly copied to the SD-card. You can refer to the [documentation](http://docs.poppy-project.org/en/installation/burn-an-image-file.html) for more details. *Note that if you buy it as a kit from one of the reseller you will also get a pre-installed SD-card.*
 
 You can also use our setup script directly on a Raspberry-Pi based on Raspbian. **Be aware tough that it takes some time and some good knowledge of Linux.** We use the [Raspoppy scripts](https://github.com/poppy-project/raspoppy) to setup the Raspberry-Pi to match our needs (custom Python, setup serial communication, setup the web interface, a Poppy user...).
 
