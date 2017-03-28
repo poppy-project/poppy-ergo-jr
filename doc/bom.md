@@ -32,7 +32,7 @@ Here you will find the complete list of material (BOM) needed to build a Poppy E
 - 1x Standoff Male/Female M2.5 10mm
 
 ## Various electronics
-- 1x Raspberry Pi 2
+- 1x Raspberry Pi 2 or Raspberry Pi 3
 - 1x micro SD 8Go
 - 1x Rasperry Pi camera
 - 1x AC power 7.5V 2A with a 2.1 x 5.5 x 9.5 jack connector ([this one](http://fr.rs-online.com/web/p/alimentations-enfichables/7262814/?searchTerm=ECP-15-7.5E&relevancy-data=636F3D3226696E3D4931384E4B6E6F776E41734D504E266C753D6672266D6D3D6D61746368616C6C7061727469616C26706D3D5E5B5C707B4C7D5C707B4E647D2D2C2F255C2E5D2B2426706F3D313326736E3D592673743D4D414E5F504152545F4E554D4245522677633D424F5448267573743D4543502D31352D372E354526&sra=p) for instance).
