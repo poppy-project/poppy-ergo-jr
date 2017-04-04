@@ -5,7 +5,6 @@ package:
 source:
   path: ../
 
-
 build:
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
@@ -15,14 +14,12 @@ requirements:
   build:
     - python
     - setuptools
-    - pypot >2.11
-    - poppy-creature >=1.8
+    - pypot >3
     - hampy
 
   run:
     - python
-    - pypot >2.11
-    - poppy-creature >=1.8
+    - pypot >3
     - opencv3
     - hampy
 
