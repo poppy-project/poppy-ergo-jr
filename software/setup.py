@@ -18,14 +18,14 @@ setup(name='poppy-ergo-jr',
       version=version(),
       packages=find_packages(),
 
-      install_requires=['pypot >= 2.11', 'poppy-creature >= 1.8', 'hampy'],
+      install_requires=['pypot >= 3', 'hampy'],
 
       include_package_data=True,
       exclude_package_data={'': ['README', '.gitignore']},
 
       zip_safe=False,
 
-      author='Pierre Rouanet, Jonathan Grizou, Matthieu Lapeyre',
+      author='https://github.com/poppy-project/poppy-ergo-jr/graphs/contributors',
       author_email='pierre.rouanet@gmail.com',
       description='Poppy Ergo Jr Software Library',
       url='https://github.com/poppy-project/poppy-ergo-jr',

@@ -7,7 +7,7 @@ from contextlib import closing
 from numpy import mean, std
 
 from pypot.primitive.utils import PositionWatcher
-from poppy.creatures import PoppyErgoJr
+from pypot.creatures import PoppyErgoJr
 from hampy import detect_markers
 
 D = 10

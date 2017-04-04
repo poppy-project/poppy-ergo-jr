@@ -1,6 +1,6 @@
 import cv2
 
-from poppy.creatures import PoppyErgoJr
+from pypot.creatures import PoppyErgoJr
 
 if __name__ == '__main__':
     jr = PoppyErgoJr()

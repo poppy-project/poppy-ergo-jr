@@ -7,7 +7,7 @@ import time
 from contextlib import closing
 from collections import deque
 
-from poppy.creatures import PoppyErgoJr
+from pypot.creatures import PoppyErgoJr
 from pypot.primitive import LoopPrimitive
 from poppy_ergo_jr.postures import IdleBreathing
 
