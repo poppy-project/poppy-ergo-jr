@@ -1,4 +1,5 @@
 # Poppy Ergo Jr
+
 [![PyPI](https://img.shields.io/pypi/v/poppy-ergo-jr.svg)](https://pypi.python.org/pypi/poppy-ergo-jr/)
 
 Poppy Ergo Jr robot is a small and low cost 6-degree-of-freedom robot arm. It consists of very simple shapes which can be easily 3D printed with FDM printers.
@@ -15,7 +16,7 @@ It comes with three tools:
 ![](doc/img/ergo_tools.gif)
 
 
-The Ergo Poppy Jr is ideal to start manipulating robots and learn robotic without difficulties.
+The Poppy Ergo Jr is ideal to start manipulating robots and learn robotic without difficulties.
 
 It is particularly well suited for educational purposes (cheap, simple to assemble, and easily controllable) or can be a very nice desk decoration for geeks and makers...
 
@@ -30,19 +31,32 @@ Documentation about Poppy Ergo Jr as every projects of the Poppy platform is loc
 
 * Then you can follow the assembly instructions presented [on the global poppy project documentation](http://docs.poppy-project.org/en/assembly-guides/ergo-jr/index.html) to guide you trough the process of transforming a bunch of parts in a magnificent robot !
 
-* Once you have a ready-to-use Poppy Ergo, you can take a look at [code samples](https://github.com/poppy-project/poppy-ergo-jr/tree/master/software/samples) for ideas
+* Once you have a ready-to-use Poppy Ergo Jr, you can take a look at [code samples](https://github.com/poppy-project/poppy-ergo-jr/tree/master/software/samples) for ideas
 
 ## Setup your Raspberry Pi board
 
-Poppy Ergo-Jr is based on the [Raspberry Pi 2 board](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) but also works with [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/). We provide our own [image](https://github.com/poppy-project/poppy-ergo-jr/releases/download/1.0.0-gm/2017-02-21-poppy-ergo-jr.img.zip) (based on Raspbian) that can be directly copied to the SD-card. You can refer to the [documentation](http://docs.poppy-project.org/en/installation/burn-an-image-file.html) for more details. *Note that if you buy it as a kit from one of the reseller you will also get a pre-installed SD-card.*
+Poppy Ergo Jr is based on the [Raspberry Pi 2 board](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) but also works with [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/). We provide our own [image](https://github.com/poppy-project/poppy-ergo-jr/releases/download/1.0.0-gm/2017-02-21-poppy-ergo-jr.img.zip) (based on Raspbian) that can be directly copied to the SD-card. You can refer to the [documentation](http://docs.poppy-project.org/en/installation/burn-an-image-file.html) for more details. *Note that if you buy it as a kit from one of the reseller you will also get a pre-installed SD-card.*
 
 You can also use our setup script directly on a Raspberry Pi based on Raspbian. **Be aware tough that it takes some time and some good knowledge of Linux.** We use the [Raspoppy scripts](https://github.com/poppy-project/raspoppy) to setup the Raspberry Pi to match our needs (custom Python, setup serial communication, setup the web interface, a Poppy user...).
 
 It a two steps process:
 
-* Make sure you have enough space on the SD-card (at least 2GB). You can extand your partition if needed via:
-```sudo raspi-config --expand-rootfs``` You will need to reboot afterwards.
-* Run the raspoppy script: ```curl -L https://raw.githubusercontent.com/poppy-project/raspoppy/master/raspoppyfication.sh | bash -s "poppy-ergo-jr"```
+*   Make sure you have enough space on the SD-card (at least 2GB). You can expand your partition if needed via:
+
+  ```bash
+  sudo raspi-config --expand-rootfs
+  ```
+
+  You will need to reboot afterwards.
+
+*   Run the installation commands:
+
+    ```bash
+    curl -L https://raw.githubusercontent.com/poppy-project/raspoppy/master/raspoppyfication.sh -o /tmp/raspoppyfication.sh
+    chmod +x /tmp/raspoppyfication.sh
+    sudo /tmp/raspoppyfication.sh
+    ```
+
 You can refer to the [documentation](http://docs.poppy-project.org/en/installation/install-a-poppy-board.html) for more details.
 
 ## Contributing
