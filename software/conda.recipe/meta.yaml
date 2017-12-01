@@ -1,6 +1,8 @@
+{% set name = "poppy-ergo-jr" %}
+{% set version = "2.0.0" %}
 package:
-  name: poppy-ergo-jr
-  # version automatically set in the build.sh and blt.bat
+  name: '{{ name }}'
+  version: '{{ version }}'
 
 source:
   path: ../
@@ -9,6 +11,8 @@ build:
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
   number: 0
+  script: python setup.py install --single-version-externally-managed --record=record.txt
+
 
 requirements:
   build:
@@ -30,6 +34,10 @@ test:
     - poppy_ergo_jr
 
 about:
-  home: https://github.com/poppy-project/poppy-ergo-jr'
+  home: https://github.com/poppy-project/poppy-ergo-jr
   summary: 'Poppy Ergo Jr Software Library'
   license: GNU GENERAL PUBLIC LICENSE Version 3
+  license_family: GPL3
+  summary: Poppy Ergo Jr Software Library
+  doc_url: 'https://docs.poppy-project.org/'
+  dev_url: 'http://github.com/poppy-project/poppy-ergo-jr'
