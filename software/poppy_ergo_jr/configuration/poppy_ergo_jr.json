@@ -59,8 +59,8 @@
       "type": "XL-320",
       "id": 4,
       "angle_limit": [
-        -90.0,
-        90.0
+        -150.0,
+        150.0
       ],
       "orientation": "direct"
     },
@@ -79,7 +79,7 @@
       "type": "XL-320",
       "id": 6,
       "angle_limit": [
-        -90.0,
+        -110.0,
         90.0
       ],
       "orientation": "indirect"
