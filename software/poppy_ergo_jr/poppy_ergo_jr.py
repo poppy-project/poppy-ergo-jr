@@ -12,6 +12,9 @@ from .primitives.postures import (BasePosture, RestPosture,
                                   SafePowerUp)
 
 
+from .primitives.demo import (Tinsel, Tetu, Poule)
+
+
 class PoppyErgoJr(AbstractPoppyCreature):
     @classmethod
     def setup(cls, robot):
@@ -36,6 +39,10 @@ class PoppyErgoJr(AbstractPoppyCreature):
         if not robot.simulated and hasattr(robot, 'marker_detector'):
             robot.attach_primitive(TrackingFeedback(robot, 25.),
                                    'tracking_feedback')
+            
+        robot.attach_primitive(Tinsel(robot), 'tinsel')
+        robot.attach_primitive(Tetu(robot), 'tetu')
+        robot.attach_primitive(Poule(robot), 'poule')
 
         for m in robot.motors:
             m.pid = (4, 2, 0)
@@ -45,4 +52,6 @@ class PoppyErgoJr(AbstractPoppyCreature):
         if not robot.simulated and hasattr(robot, 'face_tracking'):
             robot.attach_primitive(FaceTracking(robot, 10,
                                                 robot.face_detector),
-                                   'face_tracking')
+                                   'face_tracking
+            
+           
