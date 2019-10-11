@@ -1,6 +1,6 @@
 # List of suppliers
 
-##complete kit
+## Complete kit
 
 Complete kits with or without 3d printed parts are available on [Generation Robot](http://www.generationrobots.com/en/328-poppy-ergo-jr-robot)
 
