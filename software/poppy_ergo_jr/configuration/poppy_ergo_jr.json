@@ -91,12 +91,6 @@
       "index": -1,
       "fps": 20.0,
       "resolution": [640, 480]
-    },
-    "marker_detector": {
-      "type": "MarkerDetector",
-      "cameras": ["camera"],
-      "freq": 1.0,
-      "need_robot": true
     }
   }
 }
