@@ -1,5 +1,6 @@
 from numpy import sum
 from functools import partial
+from time import sleep
 
 from pypot.creatures import AbstractPoppyCreature
 from pypot.creatures.ik import IKChain
@@ -10,6 +11,7 @@ from .primitives.tracking_feedback import TrackingFeedback
 from .primitives.postures import (BasePosture, RestPosture,
                                   CuriousPosture, TetrisPosture,
                                   SafePowerUp)
+from .primitives.How_to_add_primitive_FR import (Tinsel, Tetu, Poule, Puzzel)
 
 
 class PoppyErgoJr(AbstractPoppyCreature):
@@ -33,6 +35,11 @@ class PoppyErgoJr(AbstractPoppyCreature):
         robot.attach_primitive(CuriousPosture(robot, 2.), 'curious_posture')
         robot.attach_primitive(TetrisPosture(robot, 2.), 'tetris_posture')
 
+        robot.attach_primitive(Tinsel(robot), 'tinsel_demo')
+        robot.attach_primitive(Tetu(robot), 'stubborn_demo')
+        robot.attach_primitive(Poule(robot), 'chicken_demo')
+        robot.attach_primitive(Puzzel(robot), 'puzzel_demo')
+
         if not robot.simulated and hasattr(robot, 'marker_detector'):
             robot.attach_primitive(TrackingFeedback(robot, 25.),
                                    'tracking_feedback')
@@ -46,3 +53,8 @@ class PoppyErgoJr(AbstractPoppyCreature):
             robot.attach_primitive(FaceTracking(robot, 10,
                                                 robot.face_detector),
                                    'face_tracking')
+
+        for m in robot.motors:
+            m.led = 'green'
+            sleep(0.2)
+            m.led = 'off'
