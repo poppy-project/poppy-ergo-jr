@@ -80,7 +80,7 @@ class Tinsel(Primitive): #on crée un nouvelle class Tinsel qui hérite de la cl
 ###Testons la primitives:
 '''
 '''
-from poppy.creatures import PoppyErgoJr
+from pypot.creatures import PoppyErgoJr
 poppy= PoppyErgoJr()
 poppy.attach_primitive(Tinsel(poppy,['yellow','white'],2), 'girlande')
 girlande.start()
