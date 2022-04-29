@@ -49,10 +49,10 @@ class PoppyErgoJr(AbstractPoppyCreature):
             m.torque_limit = 70.
             m.led = 'off'
 
-        if not robot.simulated and hasattr(robot, 'face_tracking'):
+        if not robot.simulated and hasattr(robot, 'face_detector'):
             robot.attach_primitive(FaceTracking(robot, 10,
                                                 robot.face_detector),
-                                   'face_tracking')
+                                   'face_detector')
 
         for m in robot.motors:
             m.led = 'green'
